@@ -16,7 +16,7 @@ export default function Header() {
     { name: "Accessories", href: "/accessories" },
     { name: "Contact", href: "/contact" },
     { name: "Our Services", href: "/#services" },
-    { name: "Get a Quote", href: "/quote" },
+    { name: "Get a Quote", href: "/price-check" },
   ]
 
   return (
