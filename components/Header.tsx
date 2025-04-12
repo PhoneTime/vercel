@@ -1,18 +1,70 @@
-import Link from 'next/link';
+"use client"
+
+import Link from "next/link"
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Accessories", href: "/accessories" },
+    { name: "Contact", href: "/contact" },
+    { name: "Our Services", href: "/#services" }, // 假设你锚点是这样设置的
+    { name: "Get a Quote", href: "/quote" },
+  ]
+
   return (
-    <header className="p-6 flex justify-between items-center">
-      <div className="text-2xl font-bold text-teal-600">
-        <Link href="/">PhoneTime</Link>
+    <header className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        {/* Logo */}
+        <Link href="/" className="text-2xl font-bold text-teal-600">
+          PhoneTime
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex space-x-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-gray-700 hover:text-teal-600 transition"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu} aria-label="Toggle Menu">
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
-      <nav className="flex items-center space-x-6 text-sm font-medium text-gray-700">
-        <Link href="/" className="hover:text-teal-600 transition">Home</Link>
-        <Link href="/price-check" className="hover:text-teal-600 transition">Price Check</Link>
-        <Link href="/accessories" className="hover:text-teal-600 transition">Accessories</Link>
-        <Link href="/appointment" className="hover:text-teal-600 transition">Appointment</Link>
-        <Link href="/contact" className="hover:text-teal-600 transition">Contact</Link>
-      </nav>
+
+      {/* Mobile Menu Drawer */}
+      {menuOpen && (
+        <div className="md:hidden bg-white px-4 py-4 shadow-md">
+          <nav className="space-y-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="block text-gray-700 hover:text-teal-600 transition"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
-  );
+  )
 }
