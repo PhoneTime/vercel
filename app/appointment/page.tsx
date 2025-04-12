@@ -47,7 +47,7 @@ export default function AppointmentPage() {
 
   return (
     <div className="max-w-xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-teal-600 mb-6">Make an Appointment</h1>
+      <h1 className="text-3xl font-bold text-teal-600 mb-6">Please fill in your details below — we’ll contact you as soon as possible to arrange your repair.</h1>
 
       {submitted ? (
         <p className="text-green-600 text-lg font-medium">
