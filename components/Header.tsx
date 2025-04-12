@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
@@ -20,9 +22,9 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-teal-600">
-          PhoneTime
+        {/* Logo (图片) */}
+        <Link href="/">
+          <img src="/phonetime-logo.png" alt="PhoneTime Logo" className="w-32 h-auto" />
         </Link>
 
         {/* Desktop Navigation */}
