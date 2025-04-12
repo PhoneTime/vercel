@@ -16,7 +16,7 @@ export default function Header() {
           />
           <div className="leading-tight">
             <div className="text-xl font-bold text-teal-600">Phone Time</div>
-            <div className="text-sm text-gray-600">Phone Repair</div>
+            <div className="text-sm text-teal-600">Phone Repair</div> {/* 修改为 text-teal-600 */}
           </div>
         </Link>
 
