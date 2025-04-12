@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 
 export default function ContactPage() {
@@ -8,7 +10,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true); // 显示感谢消息
+    setSubmitted(true);
   };
 
   return (
@@ -27,11 +29,10 @@ export default function ContactPage() {
         <p className="text-green-600">Thank you for your message! We'll get back to you soon.</p>
       ) : (
         <form
-          action="https://formspree.io/f/xblgqzjw" // 使用你提供的 Formspree URL
+          action="https://formspree.io/f/xblgqzjw"
           method="POST"
           className="mt-4"
         >
-          {/* Name */}
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
             <input
@@ -44,7 +45,6 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Email */}
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
             <input
@@ -57,7 +57,6 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Message */}
           <div className="mb-4">
             <label htmlFor="message" className="block text-sm font-medium text-gray-700">Your Message</label>
             <textarea
@@ -70,7 +69,6 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="mt-4 px-6 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition"
