@@ -8,10 +8,31 @@ import {
   CheckCircleIcon
 } from "lucide-react"
 
+export const metadata = {
+  title: 'PhoneTime - Fast & Reliable Phone Repairs in Croydon & Kilsyth, Melbourne',
+  description: 'PhoneTime offers professional phone repair services near Croydon and Kilsyth, Melbourne. Visit us for fast screen repairs, battery replacements, and more.',
+  keywords: ['phone repair Croydon', 'phone repair Kilsyth', 'phone screen repair Melbourne', 'battery replacement Croydon', 'PhoneTime Melbourne'],
+  openGraph: {
+    title: 'PhoneTime - Expert Phone Repairs Near Croydon & Kilsyth',
+    description: 'Trusted phone repairs in Croydon and Kilsyth. Walk-in or book online for screen repair, battery replacement, water damage, and more.',
+    url: 'https://www.phonetime.com.au',
+    siteName: 'PhoneTime',
+    images: [
+      {
+        url: '/images/phonetime-logo.png',
+        width: 600,
+        height: 600,
+        alt: 'PhoneTime Logo',
+      },
+    ],
+    locale: 'en_AU',
+    type: 'website',
+  },
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
       <section className="bg-gradient-to-b from-teal-600 to-teal-500 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-8">
@@ -23,7 +44,6 @@ export default function Home() {
               className="object-contain"
             />
           </div>
-
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Fast & Reliable Phone Repairs</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Timely Repairs, Timeless Quality</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -45,7 +65,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
@@ -74,7 +93,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
@@ -98,7 +116,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 bg-teal-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Fix Your Phone?</h2>
@@ -121,7 +138,6 @@ export default function Home() {
   )
 }
 
-// ✅ 添加类型定义
 type ServiceCardProps = {
   icon: React.ReactNode
   title: string
