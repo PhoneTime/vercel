@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
@@ -15,8 +13,8 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "Accessories", href: "/accessories" },
     { name: "Contact", href: "/contact" },
-    { name: "Our Services", href: "/#services" }, // 假设你锚点是这样设置的
-    { name: "Get a Quote", href: "/quote" },
+    { name: "Our Services", href: "/#services" },
+    { name: "Get a Quote", href: "/price-check" }, // 修正路径
   ]
 
   return (

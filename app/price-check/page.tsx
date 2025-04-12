@@ -687,13 +687,13 @@ export default function PriceCheck() {
 
   const price = brand && model && selectedRepair ? repairPrices[brand][model][selectedRepair] : null
 
-  const handleBrandChange = (value) => {
+  const handleBrandChange = (value: string) => {
     setBrand(value)
     setModel("")
     setSelectedRepair("")
   }
 
-  const handleModelChange = (value) => {
+  const handleModelChange = (value: string) => {
     setModel(value)
     setSelectedRepair("")
   }
