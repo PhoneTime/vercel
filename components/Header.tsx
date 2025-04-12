@@ -16,15 +16,23 @@ export default function Header() {
     { name: "Accessories", href: "/accessories" },
     { name: "Contact", href: "/contact" },
     { name: "Our Services", href: "/#services" },
-    { name: "Get a Quote", href: "/price-check" }, // 修正路径
+    { name: "Get a Quote", href: "/quote" },
   ]
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        {/* Logo (图片) */}
-        <Link href="/">
-          <img src="/phonetime-logo.png" alt="PhoneTime Logo" className="w-32 h-auto" />
+        {/* Logo and Brand Name */}
+        <Link href="/" className="flex items-center space-x-2">
+          {/* Logo Image */}
+          <img src="/images/phonetime-logo.png" alt="PhoneTime Logo" className="w-32 h-auto" />
+          
+          {/* Brand Name */}
+          <div className="text-left">
+            <span className="text-2xl font-bold text-teal-600">PhoneTime</span>
+            <br />
+            <span className="text-lg font-medium text-teal-600">Phone Repair</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
