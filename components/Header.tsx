@@ -25,8 +25,8 @@ export default function Header() {
         {/* Logo and Brand Name */}
         <Link href="/" className="flex items-center space-x-2">
           {/* Logo Image */}
-          <img src="/images/phonetime-logo.png" alt="PhoneTime Logo" className="w-32 h-auto" />
-          
+          <img src="/images/phonetime-logo.png" alt="PhoneTime Logo" className="h-12" /> {/* Adjust the height here */}
+
           {/* Brand Name */}
           <div className="text-left">
             <span className="text-2xl font-bold text-teal-600">PhoneTime</span>
