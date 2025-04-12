@@ -27,6 +27,9 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  devIndicators: {
+    allowedDevOrigins: ['http://127.0.0.1', 'http://172.0.0.1'], // 在这里添加你的本地IP地址
+  },
 }
 
 if (userConfig) {
