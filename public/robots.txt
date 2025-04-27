@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://www.phonetime.com.au/sitemap.xml
+# Host
+Host: https://www.phonetop.com.au
+
+# Sitemaps
+Sitemap: https://www.phonetop.com.au/sitemap.xml
