@@ -52,7 +52,7 @@ export default function ContactPage() {
         <div>
           <span className="block text-gray-500 text-sm">📍 Address</span>
           <span className="text-lg text-gray-800 font-medium">
-            Mooroolbark, Melbourne, Australia
+            Kilsyth, Melbourne, Australia
           </span>
         </div>
 
