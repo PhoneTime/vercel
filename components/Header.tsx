@@ -13,7 +13,6 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Accessories", href: "/accessories" },
     { name: "Contact", href: "/contact" },
     { name: "Repair Now", href: "/appointment" },
     { name: "Get a Quote", href: "/price-check" },
@@ -25,7 +24,7 @@ export default function Header() {
         {/* Logo and Brand Name */}
         <Link href="/" className="flex items-center space-x-2">
           {/* Logo Image */}
-          <img src="/images/phonetime-logo.png" alt="PhoneTime Logo" className="h-12" /> {/* Adjust the height here */}
+          <img src="/images/phonetime-logo.png" alt="PhoneTime Logo" className="h-12" />
 
           {/* Brand Name */}
           <div className="text-left">
@@ -37,6 +36,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
+          {/* 循环渲染的内部链接 */}
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -46,6 +46,15 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
+          {/* 新增的外部链接 */}
+          <a
+            href="https://auphonetime.myshopify.com"
+            className="text-gray-700 hover:text-teal-600 transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Accessories
+          </a>
         </nav>
 
         {/* Mobile menu button */}
@@ -60,6 +69,7 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden bg-white px-4 py-4 shadow-md">
           <nav className="space-y-2">
+            {/* 循环渲染的内部链接 */}
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -70,6 +80,16 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
+            {/* 新增的外部链接 */}
+            <a
+              href="https://auphonetime.myshopify.com"
+              className="block text-gray-700 hover:text-teal-600 transition"
+              onClick={() => setMenuOpen(false)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Accessories
+            </a>
           </nav>
         </div>
       )}
