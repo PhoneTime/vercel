@@ -54,7 +54,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Accessories
+            Store
           </a>
         </nav>
 
@@ -85,7 +85,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Accessories
+              Store
             </a>
             {navLinks.slice(1).map((link) => ( // 从第二个链接开始循环，Home已单独处理
               <Link
