@@ -13,301 +13,301 @@ const repairPrices = {
   iPhone: {
     // --- NEW iPhone 16 Series (Estimated Prices) ---
     "iPhone 16 Pro Max": {
-      "Screen Replacement": 409, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 249,
+      "Screen Replacement": 389, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 249,
     },
     "iPhone 16 Pro": {
-      "Screen Replacement": 389, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 239,
+      "Screen Replacement": 289, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 239,
     },
     "iPhone 16 Plus": {
-      "Screen Replacement": 279, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 219,
+      "Screen Replacement": 239, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 219,
     },
     "iPhone 16": {
-      "Screen Replacement": 269, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 209,
+      "Screen Replacement": 229, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 209,
     },
     // --- End NEW iPhone 16 Series ---
     "iPhone 15 Pro Max": {
-      "Screen Replacement": 389, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 229,
+      "Screen Replacement": 209, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 229,
     },
     "iPhone 15 Pro": {
-      "Screen Replacement": 369, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 219,
+      "Screen Replacement": 189, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 219,
     },
     "iPhone 15 Plus": {
-      "Screen Replacement": 259, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 209,
+      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 209,
     },
     "iPhone 15": {
-      "Screen Replacement": 249, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 199,
+      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 199,
     },
     "iPhone 14 Pro Max": {
-      "Screen Replacement": 369, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 219,
+      "Screen Replacement": 199, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 219,
     },
     "iPhone 14 Pro": {
-      "Screen Replacement": 349, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 209,
+      "Screen Replacement": 189, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 209,
     },
     "iPhone 14 Plus": {
-      "Screen Replacement": 249, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 199,
+      "Screen Replacement": 179, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 199,
     },
     "iPhone 14": {
-      "Screen Replacement": 229, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 189,
+      "Screen Replacement": 179, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 189,
     },
     "iPhone 13 Pro Max": {
-      "Screen Replacement": 289, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 199,
+      "Screen Replacement": 179, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 199,
     },
     "iPhone 13 Pro": {
-      "Screen Replacement": 279, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 189,
+      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 189,
     },
     "iPhone 13": {
-      "Screen Replacement": 229, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
+      "Screen Replacement": 159, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 13 Mini": {
-      "Screen Replacement": 219, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
+      "Screen Replacement": 169, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
     },
     "iPhone 12 Pro Max": {
-      "Screen Replacement": 239, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
+      "Screen Replacement": 159, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 12 Pro": {
-      "Screen Replacement": 229, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
+      "Screen Replacement": 149, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
     },
     "iPhone 12": {
-      "Screen Replacement": 219, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 159,
+      "Screen Replacement": 149, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 159,
     },
     "iPhone 12 Mini": {
-      "Screen Replacement": 199, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
+      "Screen Replacement": 159, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
     },
     "iPhone 11 Pro Max": {
-      "Screen Replacement": 189, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 159,
+      "Screen Replacement": 139, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 159,
     },
     "iPhone 11 Pro": {
-      "Screen Replacement": 179, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
+      "Screen Replacement": 139, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
     },
     "iPhone 11": {
-      "Screen Replacement": 159, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 139,
+      "Screen Replacement": 119, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 139,
     },
     "iPhone XS Max": {
-      "Screen Replacement": 149, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
-    },
-    "iPhone XS": {
-      "Screen Replacement": 139, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 139,
-    },
-    "iPhone XR": {
-      "Screen Replacement": 129, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 129,
-    },
-    "iPhone X": {
-      "Screen Replacement": 139, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 139,
-    },
-    "iPhone 8 Plus": {
-      "Screen Replacement": 129, "Battery Replacement": 79, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 99,
-    },
-    "iPhone 8": {
-      "Screen Replacement": 119, "Battery Replacement": 79, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 89,
-    },
-    "iPhone 7 Plus": {
-      "Screen Replacement": 109, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 129,
-    },
-    "iPhone 7": {
-      "Screen Replacement": 99, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 129,
-    },
-    "iPhone 6s Plus": {
-      "Screen Replacement": 99, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 119,
-    },
-    "iPhone 6s": {
-      "Screen Replacement": 99, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 109,
-    },
-    "iPhone 6 Plus": {
-      "Screen Replacement": 99, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 109,
-    },
-    "iPhone 6": {
-      "Screen Replacement": 99, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 109,
-    },
-    "iPhone SE (3rd gen)": {
-      "Screen Replacement": 129, "Battery Replacement": 99, "Charging Port Repair": 119, "Water Damage Treatment": 89, "Back Glass Repair": 149,
-    },
-    "iPhone SE (2nd gen)": {
       "Screen Replacement": 119, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
     },
+    "iPhone XS": {
+      "Screen Replacement": 109, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 139,
+    },
+    "iPhone XR": {
+      "Screen Replacement": 109, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 129,
+    },
+    "iPhone X": {
+      "Screen Replacement": 109, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 139,
+    },
+    "iPhone 8 Plus": {
+      "Screen Replacement": 99, "Battery Replacement": 79, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 99,
+    },
+    "iPhone 8": {
+      "Screen Replacement": 89, "Battery Replacement": 79, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 89,
+    },
+    "iPhone 7 Plus": {
+      "Screen Replacement": 89, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 129,
+    },
+    "iPhone 7": {
+      "Screen Replacement": 89, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 129,
+    },
+    "iPhone 6s Plus": {
+      "Screen Replacement": 79, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 119,
+    },
+    "iPhone 6s": {
+      "Screen Replacement": 79, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 109,
+    },
+    "iPhone 6 Plus": {
+      "Screen Replacement": 79, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 109,
+    },
+    "iPhone 6": {
+      "Screen Replacement": 79, "Battery Replacement": 69, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 109,
+    },
+    "iPhone SE (3rd gen)": {
+      "Screen Replacement": 99, "Battery Replacement": 99, "Charging Port Repair": 119, "Water Damage Treatment": 89, "Back Glass Repair": 149,
+    },
+    "iPhone SE (2nd gen)": {
+      "Screen Replacement": 99, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
+    },
     "iPhone SE (1st gen)": {
-      "Screen Replacement": 109, "Battery Replacement": 89, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 149,
+      "Screen Replacement": 69, "Battery Replacement": 89, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 149,
     },
   },
   iPad: {
     "iPad Pro 12.9-inch (6th gen)": {
-      "Screen Replacement": 499, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 199, "Back Glass Repair": 249,
+      "Screen Replacement": 459, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 199, "Back Glass Repair": 249,
     },
     "iPad Pro 12.9-inch (5th gen)": {
-      "Screen Replacement": 479, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 199, "Back Glass Repair": 229,
+      "Screen Replacement": 469, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 199, "Back Glass Repair": 229,
     },
     "iPad Pro 11-inch (4th gen)": {
-      "Screen Replacement": 429, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 189, "Back Glass Repair": 199,
+      "Screen Replacement": 349, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 189, "Back Glass Repair": 199,
     },
     "iPad Pro 11-inch (3rd gen)": {
-      "Screen Replacement": 399, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 189, "Back Glass Repair": 189,
+      "Screen Replacement": 349, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 189, "Back Glass Repair": 189,
     },
     "iPad Air (5th gen)": {
-      "Screen Replacement": 349, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 179, "Back Glass Repair": 169,
+      "Screen Replacement": 359, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 179, "Back Glass Repair": 169,
     },
     "iPad Air (4th gen)": {
-      "Screen Replacement": 329, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 179, "Back Glass Repair": 159,
+      "Screen Replacement": 419, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 179, "Back Glass Repair": 159,
     },
     "iPad (10th gen)": {
-      "Screen Replacement": 299, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 169, "Back Glass Repair": 149,
+      "Screen Replacement": 149, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 169, "Back Glass Repair": 149,
     },
     "iPad (9th gen)": {
-      "Screen Replacement": 279, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 169, "Back Glass Repair": 139,
+      "Screen Replacement": 149, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 169, "Back Glass Repair": 139,
     },
     "iPad mini (6th gen)": {
-      "Screen Replacement": 299, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 169, "Back Glass Repair": 149,
+      "Screen Replacement": 409, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 169, "Back Glass Repair": 149,
     },
     "iPad mini (5th gen)": {
-      "Screen Replacement": 279, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 159, "Back Glass Repair": 139,
+      "Screen Replacement": 239, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 159, "Back Glass Repair": 139,
     },
   },
   Samsung: {
     // S Series
     "Galaxy S25 Ultra": {
-      "Screen Replacement": 529, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 459, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S25+": {
-      "Screen Replacement": 389, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 379, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S25": {
       "Screen Replacement": 349, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S24 Ultra": {
-      "Screen Replacement": 509, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 449, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S24+": {
-      "Screen Replacement": 379, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 369, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S24": {
       "Screen Replacement": 339, "Battery Replacement": 119, "Charging Port Repair": 109, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S23 Ultra": {
-      "Screen Replacement": 499, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 469, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S23+": {
-      "Screen Replacement": 359, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 349, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S23": {
-      "Screen Replacement": 329, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
-    },
-    "Galaxy S22 Ultra": {
-      "Screen Replacement": 479, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
-    },
-    "Galaxy S22+": {
       "Screen Replacement": 339, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
+    "Galaxy S22 Ultra": {
+      "Screen Replacement": 459, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+    },
+    "Galaxy S22+": {
+      "Screen Replacement": 319, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+    },
     "Galaxy S22": {
-      "Screen Replacement": 309, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 359, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S21 Ultra": {
-      "Screen Replacement": 409, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 419, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S21+": {
-      "Screen Replacement": 279, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 329, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S21": {
-      "Screen Replacement": 279, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 329, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S21 FE": {
-      "Screen Replacement": 219, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 309, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S20 Ultra": {
-      "Screen Replacement": 379, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 399, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S20+": {
-      "Screen Replacement": 339, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 379, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S20": {
-      "Screen Replacement": 319, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 89,
+      "Screen Replacement": 379, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
     "Galaxy S20 FE": {
-      "Screen Replacement": 229, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 239, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy S10+": {
       "Screen Replacement": 359, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
     "Galaxy S10": {
-      "Screen Replacement": 329, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 89,
+      "Screen Replacement": 279, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
     "Galaxy S10e": {
-      "Screen Replacement": 309, "Battery Replacement": 89, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 89,
+      "Screen Replacement": 349, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
 
     // A Series
     // --- NEW Samsung A Series (Estimated Prices) ---
      "Galaxy A56": {
-      "Screen Replacement": 219, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 109, "Back Glass Repair": 99,
+      "Screen Replacement": 189, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 109, "Back Glass Repair": 99,
     },
      "Galaxy A55": {
-      "Screen Replacement": 209, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 109, "Back Glass Repair": 89,
+      "Screen Replacement": 179, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 109, "Back Glass Repair": 89,
     },
     "Galaxy A36": {
-      "Screen Replacement": 199, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
+      "Screen Replacement": 249, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
     "Galaxy A35": {
-      "Screen Replacement": 189, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
+      "Screen Replacement": 219, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
      "Galaxy A25": {
-      "Screen Replacement": 189, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
+      "Screen Replacement": 169, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
     "Galaxy A16": {
-      "Screen Replacement": 179, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 89, "Back Glass Repair": 89,
+      "Screen Replacement": 189, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 89, "Back Glass Repair": 89,
     },
     // --- End NEW Samsung A Series ---
     "Galaxy A54": {
-      "Screen Replacement": 199, "Battery Replacement": 79, "Charging Port Repair": 69, "Water Damage Treatment": 109, "Back Glass Repair": 79,
+      "Screen Replacement": 219, "Battery Replacement": 79, "Charging Port Repair": 69, "Water Damage Treatment": 109, "Back Glass Repair": 79,
     },
     "Galaxy A53": {
-      "Screen Replacement": 189, "Battery Replacement": 79, "Charging Port Repair": 69, "Water Damage Treatment": 109, "Back Glass Repair": 79,
+      "Screen Replacement": 169, "Battery Replacement": 79, "Charging Port Repair": 69, "Water Damage Treatment": 109, "Back Glass Repair": 79,
     },
     "Galaxy A52": {
-      "Screen Replacement": 189, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
+      "Screen Replacement": 169, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
     },
     "Galaxy A51": {
-      "Screen Replacement": 189, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
+      "Screen Replacement": 269, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
     },
     "Galaxy A34": {
-      "Screen Replacement": 179, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
+      "Screen Replacement": 169, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
     },
     "Galaxy A33": {
-      "Screen Replacement": 179, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
+      "Screen Replacement": 209, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
     },
     "Galaxy A32": {
       "Screen Replacement": 179, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
     },
     "Galaxy A23": {
-      "Screen Replacement": 169, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
+      "Screen Replacement": 139, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
     },
     "Galaxy A22": {
-      "Screen Replacement": 169, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
+      "Screen Replacement": 149, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
     },
     "Galaxy A14": {
-      "Screen Replacement": 169, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
+      "Screen Replacement": 189, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
     },
     "Galaxy A13": {
-      "Screen Replacement": 169, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
+      "Screen Replacement": 159, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
     },
     "Galaxy A12": {
-      "Screen Replacement": 159, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 79, "Back Glass Repair": 79,
+      "Screen Replacement": 149, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 79, "Back Glass Repair": 79,
     },
 
     // Note Series
     "Galaxy Note 20 Ultra": {
-      "Screen Replacement": 289, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 389, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy Note 20": {
-      "Screen Replacement": 269, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 369, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy Note 10+": {
-      "Screen Replacement": 259, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+      "Screen Replacement": 439, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 99,
     },
     "Galaxy Note 10": {
-      "Screen Replacement": 239, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
+      "Screen Replacement": 409, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
     "Galaxy Note 9": {
-      "Screen Replacement": 229, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 79,
+      "Screen Replacement": 339, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 79,
     },
     "Galaxy Note 8": {
-      "Screen Replacement": 169, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
+      "Screen Replacement": 359, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 99, "Back Glass Repair": 79,
     },
   },
   Google: {
