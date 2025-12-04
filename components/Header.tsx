@@ -49,7 +49,7 @@ export default function Header() {
           ))}
           {/* Accessories 链接依然独立存在，放在 Home 之后 */}
           <a
-            href="https://auphonetime.myshopify.com"
+            href="https://phonehero.odoo.com/shop/category/accessories-8"
             className="text-gray-700 hover:text-teal-600 transition"
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +79,7 @@ export default function Header() {
               Home
             </Link>
             <a
-              href="https://auphonetime.myshopify.com"
+              href="https://phonehero.odoo.com/shop/category/accessories-8"
               className="block text-gray-700 hover:text-teal-600 transition"
               onClick={() => setMenuOpen(false)}
               target="_blank"
