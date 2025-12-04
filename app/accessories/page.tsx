@@ -7,7 +7,7 @@ export default function AccessoriesPage() {
     return (
       <div className="p-6">
         {/* 用<a>标签将整个h1标题包裹起来，并指向你的Shopify商店 */}
-        <a href="https://auphonetime.myshopify.com" className="hover:underline">
+        <a href="https://phonehero.odoo.com/shop/category/accessories-8" className="hover:underline">
           <h1 className="text-2xl font-bold">Accessories</h1>
         </a>
         <p>Explore our range of phone accessories like cases and screen protectors.</p>
