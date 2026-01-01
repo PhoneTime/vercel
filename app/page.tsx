@@ -8,14 +8,13 @@ import {
   CheckCircleIcon
 } from "lucide-react"
 
-// 这里是关键！修改这里的标题会直接更新浏览器 Tab
 export const metadata = {
   title: 'Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs',
-  description: 'Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs. We fix your screen or battery at your door.',
-  keywords: ['phone repair Kilsyth', 'on-site phone repair Melbourne', 'mobile phone repair Kilsyth', 'cheap iPhone repair', 'Phone Time'],
+  description: 'Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs. We fix your screen or battery at your door with no travel fee.',
+  keywords: ['phone repair Kilsyth', 'on-site phone repair Melbourne', 'mobile phone repair Eastern Suburbs', 'cheap iPhone repair', 'Phone Time'],
   openGraph: {
     title: 'Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs',
-    description: 'Professional mobile phone repair at your door in Kilsyth. Walk-in or we come to you for screen and battery repairs.',
+    description: 'Professional mobile phone repair at your door in Kilsyth and Melbourne East. Best parts and affordable prices.',
     url: 'https://www.phonetime.com.au',
     siteName: 'PhoneTime',
     images: [
@@ -45,9 +44,9 @@ export default function Home() {
               className="object-contain"
             />
           </div>
-          {/* 这里我帮你把网页正中的大标题也改得更霸气了 */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">On-site Phone Repairs in Kilsyth</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Cheap prices, best parts, at your door.</p>
+          {/* 这里把覆盖范围扩大到了东南区 */}
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">On-site Phone Repairs Kilsyth & Eastern Suburbs</h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Cheap prices, best parts, at your door across Melbourne's East.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/price-check">
               <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100">
@@ -74,7 +73,7 @@ export default function Home() {
             <ServiceCard
               icon={<PhoneIcon className="h-10 w-10" />}
               title="Screen Repairs"
-              description="Fast screen replacement for all major phone models."
+              description="Fast screen replacement for all major phone models at your location."
             />
             <ServiceCard
               icon={<WrenchIcon className="h-10 w-10" />}
@@ -83,13 +82,13 @@ export default function Home() {
             />
             <ServiceCard
               icon={<CheckCircleIcon className="h-10 w-10" />}
-              title="Water Damage"
-              description="Specialized treatment for water-damaged devices."
+              title="Charging Port"
+              description="Expert fix for charging issues and broken ports."
             />
             <ServiceCard
               icon={<CalendarIcon className="h-10 w-10" />}
               title="Same-Day Service"
-              description="Most repairs completed within hours, not days."
+              description="Most repairs completed within 30-60 minutes at your door."
             />
           </div>
         </div>
@@ -97,22 +96,22 @@ export default function Home() {
 
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Phone Time</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard
               number="1"
-              title="On-site Service"
-              description="We come to you in Kilsyth and Eastern Suburbs. No extra travel fee!"
+              title="We Come To You"
+              description="Serving Kilsyth and all Eastern Suburbs. No extra travel fees applied!"
             />
             <FeatureCard
               number="2"
-              title="Best Parts"
-              description="We use only high-quality, manufacturer-grade replacement parts."
+              title="Best Quality Parts"
+              description="We use only the highest-grade parts to ensure your phone lasts."
             />
             <FeatureCard
               number="3"
-              title="90-Day Warranty"
-              description="All our repairs come with a 90-day warranty for your peace of mind."
+              title="Cheap & Fast"
+              description="Professional service at a price that won't break the bank."
             />
           </div>
         </div>
@@ -121,7 +120,7 @@ export default function Home() {
       <section className="py-16 bg-teal-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Need Your Phone Fixed Today?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">Professional on-site repair in Kilsyth starting from low price.</p>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">Mobile phone repair at your door in Kilsyth and Eastern Suburbs.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/price-check">
               <Button size="lg" variant="secondary" className="bg-white text-teal-600 hover:bg-slate-100">
