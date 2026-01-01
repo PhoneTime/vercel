@@ -59,7 +59,7 @@ export default function Home() {
                 variant="outline"
                 className="bg-white text-teal-600 hover:bg-slate-100"
               >
-                Book an Appointment
+                Repair Now
               </Button>
             </Link>
           </div>
