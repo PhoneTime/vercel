@@ -57,7 +57,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-teal-600"
+                className="bg-white text-teal-600 hover:bg-slate-100"
               >
                 Book an Appointment
               </Button>
