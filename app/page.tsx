@@ -12,12 +12,13 @@ import {
 export const metadata = {
   title: 'Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs',
   description: 'Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs.',
+  keywords: ['phone repair Kilsyth', 'on-site phone repair Melbourne', 'mobile phone repair Eastern Suburbs', 'cheap iPhone repair', 'Phone Time'],
 }
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Section - 已统一按钮颜色 */}
+      {/* 1. Hero Section - 头部大 Banner */}
       <section className="bg-gradient-to-b from-teal-600 to-teal-500 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-8">
@@ -36,29 +37,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. 配件分类区域 (位于 Our Services 上方) */}
+      {/* 2. Shop Accessories - 两行六组分类卡片 */}
       <section className="py-16 bg-slate-50 border-b">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10 text-slate-800">Shop Accessories</h2>
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-10 text-slate-800">Shop Accessories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* iPhone 配件 */}
+            {/* 第一排 */}
             <CategoryCard 
               image="/images/iphone-acc.jpg" 
-              title="iPhone Accessories"
-              link="https://phonehero.odoo.com/shop/category/accessories-phone-case-iphone-case-1"
+              title="iPhone Accessories" 
+              link="https://phonehero.odoo.com/shop/category/accessories-phone-case-iphone-case-1" 
             />
-            {/* Samsung 配件 */}
             <CategoryCard 
               image="/images/samsung-acc.jpg" 
-              title="Samsung Accessories"
-              link="https://phonehero.odoo.com/shop/category/accessories-phone-case-samsung-case-7"
+              title="Samsung Accessories" 
+              link="https://phonehero.odoo.com/shop/category/accessories-phone-case-samsung-case-7" 
             />
-            {/* 全部商店 */}
             <CategoryCard 
               image="/images/shop-all.jpg" 
-              title="Shop All"
-              link="https://phonehero.odoo.com/shop"
-              isHighlight
+              title="Shop All" 
+              link="https://phonehero.odoo.com/shop" 
+              isHighlight 
+            />
+            {/* 第二排 - 新增分类 */}
+            <CategoryCard 
+              image="/images/charger-cable.jpg" 
+              title="Charger & Cables" 
+              link="https://phonehero.odoo.com/shop/category/accessories-charges-cables-54" 
+            />
+            <CategoryCard 
+              image="/images/power-bank.jpg" 
+              title="Power Bank" 
+              link="https://phonehero.odoo.com/shop/category/accessories-power-bank-55" 
+            />
+            <CategoryCard 
+              image="/images/car-holder.jpg" 
+              title="Car Holders" 
+              link="https://phonehero.odoo.com/shop/category/accessories-mounts-car-accessories-57" 
             />
           </div>
         </div>
@@ -77,61 +92,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Why Choose Phone Time Section - 已补全 */}
+      {/* 4. Why Choose Phone Time Section */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Why Choose Phone Time</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard
-              number="1"
-              title="We Come To You"
-              description="Serving Kilsyth and all Eastern Suburbs. No extra travel fees applied!"
-            />
-            <FeatureCard
-              number="2"
-              title="Best Quality Parts"
-              description="We use only the highest-grade parts to ensure your phone lasts."
-            />
-            <FeatureCard
-              number="3"
-              title="Cheap & Fast"
-              description="Professional service at a price that won't break the bank."
-            />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <FeatureCard number="1" title="We Come To You" description="Serving Kilsyth and all Eastern Suburbs. No extra travel fees applied!" />
+            <FeatureCard number="2" title="Best Quality Parts" description="We use only the highest-grade parts to ensure your phone lasts." />
+            <FeatureCard number="3" title="Cheap & Fast" description="Professional service at a price that won't break the bank." />
           </div>
         </div>
       </section>
 
-      {/* 5. Bottom Call to Action Section - 已补全 */}
+      {/* 5. Bottom Call to Action Section */}
       <section className="py-16 bg-teal-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Need Your Phone Fixed Today?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">Mobile phone repair at your door in Kilsyth and Eastern Suburbs.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/price-check">
-              <Button size="lg" variant="secondary" className="bg-white text-teal-600 hover:bg-slate-100">
-                Check Prices
-              </Button>
+              <Button size="lg" variant="secondary" className="bg-white text-teal-600 hover:bg-slate-100">Check Prices</Button>
             </Link>
             <Link href="/appointment">
-              <Button size="lg" className="bg-slate-800 hover:bg-slate-900 text-white">
-                Book Now
-              </Button>
+              <Button size="lg" className="bg-slate-800 hover:bg-slate-900 text-white">Book Now</Button>
             </Link>
           </div>
         </div>
       </section>
+
+      {/* 6. Footer - 版权与底部链接区域 */}
+      <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+            <div>
+              <h3 className="text-white font-bold text-lg mb-4">Phone Time</h3>
+              <p className="text-sm leading-relaxed">
+                Your trusted on-site phone repair specialist in Kilsyth and Melbourne's Eastern Suburbs. We fix it at your door.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/price-check" className="hover:text-teal-400 transition-colors">Repair Prices</Link></li>
+                <li><Link href="/appointment" className="hover:text-teal-400 transition-colors">Book a Repair</Link></li>
+                <li><Link href="https://phonehero.odoo.com/shop" target="_blank" className="hover:text-teal-400 transition-colors">Shop Accessories</Link></li>
+              </ul>
+            </div>
+            <div className="text-center md:text-right text-sm">
+              <h3 className="text-white font-bold text-lg mb-4">Service Area</h3>
+              <p>Kilsyth, Victoria & Eastern Suburbs</p>
+              <p className="mt-2 font-semibold text-teal-500">Fast · Professional · Affordable</p>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-slate-800 text-center text-xs">
+            <p>© {new Date().getFullYear()} Phone Time Phone Repair. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
 
-// 配件分类卡片组件
+// 辅助组件：配件卡片
 function CategoryCard({ image, title, link, isHighlight = false }: { image: string, title: string, link: string, isHighlight?: boolean }) {
   return (
     <Link href={link} target="_blank" className="group block">
       <div className="bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 border-2 border-transparent group-hover:border-teal-500">
         <div className="relative aspect-square md:aspect-[4/3] overflow-hidden">
           <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
         </div>
         <div className="p-6 text-center">
           <h3 className={`text-xl font-bold mb-2 ${isHighlight ? 'text-teal-600' : 'text-slate-800'}`}>{title}</h3>
@@ -144,24 +172,24 @@ function CategoryCard({ image, title, link, isHighlight = false }: { image: stri
   )
 }
 
+// 辅助组件：服务卡片
 function ServiceCard({ icon, title, description }: { icon: any, title: string, description: string }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border">
       <div className="text-teal-500 mb-4 flex justify-center">{icon}</div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-slate-600">{description}</p>
+      <p className="text-slate-600 text-sm">{description}</p>
     </div>
   )
 }
 
+// 辅助组件：特色优势卡片
 function FeatureCard({ number, title, description }: { number: string, title: string, description: string }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
-      <div className="bg-teal-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">
-        {number}
-      </div>
+    <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+      <div className="bg-teal-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-6 mx-auto">{number}</div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-slate-600">{description}</p>
+      <p className="text-slate-600 text-sm">{description}</p>
     </div>
   )
 }
