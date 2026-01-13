@@ -6,9 +6,7 @@ import {
   WrenchIcon,
   CalendarIcon,
   CheckCircleIcon,
-  ArrowRightIcon,
-  PhoneCallIcon,
-  MessageCircleIcon
+  ArrowRightIcon
 } from "lucide-react"
 
 export const metadata = {
@@ -19,7 +17,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section - 头部横幅 */}
       <section className="bg-gradient-to-b from-teal-600 to-teal-500 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
@@ -44,11 +42,9 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-10 text-slate-800">Shop Accessories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* 第一排 */}
             <CategoryCard image="/images/iphone-acc.jpg" title="iPhone Accessories" link="https://phonehero.odoo.com/shop/category/accessories-phone-case-iphone-case-1" />
             <CategoryCard image="/images/samsung-acc.jpg" title="Samsung Accessories" link="https://phonehero.odoo.com/shop/category/accessories-phone-case-samsung-case-7" />
             <CategoryCard image="/images/charger-cable.jpg" title="Charger & Cables" link="https://phonehero.odoo.com/shop/category/accessories-charges-cables-54" />
-            {/* 第二排 */}
             <CategoryCard image="/images/power-bank.jpg" title="Power Bank" link="https://phonehero.odoo.com/shop/category/accessories-power-bank-55" />
             <CategoryCard image="/images/car-holder.jpg" title="Car Holders" link="https://phonehero.odoo.com/shop/category/accessories-mounts-car-accessories-57" />
             <CategoryCard image="/images/shop-all.jpg" title="Shop All" link="https://phonehero.odoo.com/shop" isHighlight />
@@ -124,32 +120,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* 悬浮联系按钮组 - WhatsApp & Call */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        {/* WhatsApp 按钮 */}
-        <Link 
-          href="https://wa.me/61468897890" 
-          target="_blank"
-          className="bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-        >
-          <MessageCircleIcon className="h-6 w-6" />
-          <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
-            WhatsApp
-          </span>
-        </Link>
-
-        {/* 拨号按钮 */}
-        <Link 
-          href="tel:0468897890"
-          className="bg-teal-500 hover:bg-teal-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-        >
-          <PhoneCallIcon className="h-6 w-6" />
-          <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
-            Call Now
-          </span>
-        </Link>
-      </div>
     </div>
   )
 }
