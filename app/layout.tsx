@@ -4,6 +4,8 @@ import type { ReactNode } from "react"
 import Providers from "@/app/providers"
 import Header from "../components/Header"
 import Script from "next/script" 
+import Link from "next/link"
+import { MessageCircleIcon, PhoneCallIcon } from "lucide-react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -29,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <head>
-        {/* Google Tag (gtag.js) 基础脚本 - 使用 Ads ID 作为主加载源 */}
+        {/* Google Tag (gtag.js) 基础脚本 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17522228043"
           strategy="afterInteractive"
@@ -50,6 +52,32 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <main>{children}</main>
         </Providers>
+
+        {/* --- 全站通用：右下角悬浮按钮组 (WhatsApp & Call) --- */}
+        <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-3">
+          {/* WhatsApp 按钮 - 绿色 */}
+          <Link 
+            href="https://wa.me/61468897890" 
+            target="_blank"
+            className="bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+          >
+            <MessageCircleIcon className="h-6 w-6" />
+            <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
+              WhatsApp
+            </span>
+          </Link>
+
+          {/* 拨号按钮 - 蓝色/原色 */}
+          <Link 
+            href="tel:0468897890"
+            className="bg-teal-500 hover:bg-teal-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+          >
+            <PhoneCallIcon className="h-6 w-6" />
+            <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
+              Call Now
+            </span>
+          </Link>
+        </div>
       </body>
     </html>
   )
