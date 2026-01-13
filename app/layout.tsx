@@ -3,7 +3,7 @@ import { Inter } from "next/font/google"
 import type { ReactNode } from "react"
 import Providers from "@/app/providers"
 import Header from "../components/Header"
-import Script from "next/script" // 1. 导入脚本组件
+import Script from "next/script" 
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -29,18 +29,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <head>
-        {/* 2. Google Tag (gtag.js) 基础脚本 */}
+        {/* Google Tag (gtag.js) 基础脚本 - 使用 Ads ID 作为主加载源 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17522228043"
           strategy="afterInteractive"
         />
-        {/* 3. Google Tag 配置脚本 */}
-        <Script id="google-analytics" strategy="afterInteractive">
+        {/* 配置 Google Ads 和 Google Analytics */}
+        <Script id="google-tags" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17522228043');
+            gtag('config', 'G-94D6CCRGY8');
           `}
         </Script>
       </head>
