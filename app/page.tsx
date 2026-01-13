@@ -17,7 +17,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Section (保持不变，已统一按钮颜色) */}
+      {/* 1. Hero Section - 已统一按钮颜色 */}
       <section className="bg-gradient-to-b from-teal-600 to-teal-500 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-8">
@@ -36,42 +36,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. 新增：配件分类区域 (位于 Our Services 上方) */}
+      {/* 2. 配件分类区域 (位于 Our Services 上方) */}
       <section className="py-16 bg-slate-50 border-b">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Shop Accessories</h2>
+          <h2 className="text-3xl font-bold text-center mb-10 text-slate-800">Shop Accessories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
             {/* iPhone 配件 */}
             <CategoryCard 
-              image="/images/iphone-acc.jpg" // 请确保上传并命名图片
+              image="/images/iphone-acc.jpg" 
               title="iPhone Accessories"
               link="https://phonehero.odoo.com/shop/category/accessories-phone-case-iphone-case-1"
             />
-
             {/* Samsung 配件 */}
             <CategoryCard 
-              image="/images/samsung-acc.jpg" // 使用你已有的图片
+              image="/images/samsung-acc.jpg" 
               title="Samsung Accessories"
               link="https://phonehero.odoo.com/shop/category/accessories-phone-case-samsung-case-7"
             />
-
             {/* 全部商店 */}
             <CategoryCard 
-              image="/images/shop-all.jpg" // 请确保上传并命名图片
+              image="/images/shop-all.jpg" 
               title="Shop All"
               link="https://phonehero.odoo.com/shop"
               isHighlight
             />
-
           </div>
         </div>
       </section>
 
-      {/* 3. Our Services Section (保持不变) */}
+      {/* 3. Our Services Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ServiceCard icon={<PhoneIcon className="h-10 w-10" />} title="Screen Repairs" description="Fast screen replacement at your location." />
             <ServiceCard icon={<WrenchIcon className="h-10 w-10" />} title="Battery Replacement" description="Restore your phone's battery life." />
@@ -81,7 +77,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 后续的 Why Choose Us 部分保持不变... */}
+      {/* 4. Why Choose Phone Time Section - 已补全 */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Why Choose Phone Time</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <FeatureCard
+              number="1"
+              title="We Come To You"
+              description="Serving Kilsyth and all Eastern Suburbs. No extra travel fees applied!"
+            />
+            <FeatureCard
+              number="2"
+              title="Best Quality Parts"
+              description="We use only the highest-grade parts to ensure your phone lasts."
+            />
+            <FeatureCard
+              number="3"
+              title="Cheap & Fast"
+              description="Professional service at a price that won't break the bank."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Bottom Call to Action Section - 已补全 */}
+      <section className="py-16 bg-teal-500 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Need Your Phone Fixed Today?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">Mobile phone repair at your door in Kilsyth and Eastern Suburbs.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/price-check">
+              <Button size="lg" variant="secondary" className="bg-white text-teal-600 hover:bg-slate-100">
+                Check Prices
+              </Button>
+            </Link>
+            <Link href="/appointment">
+              <Button size="lg" className="bg-slate-800 hover:bg-slate-900 text-white">
+                Book Now
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
@@ -110,6 +148,18 @@ function ServiceCard({ icon, title, description }: { icon: any, title: string, d
   return (
     <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border">
       <div className="text-teal-500 mb-4 flex justify-center">{icon}</div>
+      <h3 className="text-xl font-semibold mb-3">{title}</h3>
+      <p className="text-slate-600">{description}</p>
+    </div>
+  )
+}
+
+function FeatureCard({ number, title, description }: { number: string, title: string, description: string }) {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+      <div className="bg-teal-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">
+        {number}
+      </div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-slate-600">{description}</p>
     </div>
