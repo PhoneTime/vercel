@@ -18,7 +18,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Section - 头部大 Banner */}
+      {/* 1. Hero Section */}
       <section className="bg-gradient-to-b from-teal-600 to-teal-500 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-8">
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Shop Accessories - 两行六组分类卡片 */}
+      {/* 2. Shop Accessories - 重新排序：Shop All 移至最后 */}
       <section className="py-16 bg-slate-50 border-b">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-10 text-slate-800">Shop Accessories</h2>
@@ -54,17 +54,12 @@ export default function Home() {
               link="https://phonehero.odoo.com/shop/category/accessories-phone-case-samsung-case-7" 
             />
             <CategoryCard 
-              image="/images/shop-all.jpg" 
-              title="Shop All" 
-              link="https://phonehero.odoo.com/shop" 
-              isHighlight 
-            />
-            {/* 第二排 - 新增分类 */}
-            <CategoryCard 
               image="/images/charger-cable.jpg" 
               title="Charger & Cables" 
               link="https://phonehero.odoo.com/shop/category/accessories-charges-cables-54" 
             />
+
+            {/* 第二排 */}
             <CategoryCard 
               image="/images/power-bank.jpg" 
               title="Power Bank" 
@@ -74,6 +69,13 @@ export default function Home() {
               image="/images/car-holder.jpg" 
               title="Car Holders" 
               link="https://phonehero.odoo.com/shop/category/accessories-mounts-car-accessories-57" 
+            />
+            {/* Shop All 现在在最后 */}
+            <CategoryCard 
+              image="/images/shop-all.jpg" 
+              title="Shop All" 
+              link="https://phonehero.odoo.com/shop" 
+              isHighlight 
             />
           </div>
         </div>
@@ -120,7 +122,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Footer - 版权与底部链接区域 */}
+      {/* 6. Footer */}
       <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
@@ -153,7 +155,7 @@ export default function Home() {
   )
 }
 
-// 辅助组件：配件卡片
+// 辅助组件保持不变...
 function CategoryCard({ image, title, link, isHighlight = false }: { image: string, title: string, link: string, isHighlight?: boolean }) {
   return (
     <Link href={link} target="_blank" className="group block">
@@ -172,7 +174,6 @@ function CategoryCard({ image, title, link, isHighlight = false }: { image: stri
   )
 }
 
-// 辅助组件：服务卡片
 function ServiceCard({ icon, title, description }: { icon: any, title: string, description: string }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border">
@@ -183,7 +184,6 @@ function ServiceCard({ icon, title, description }: { icon: any, title: string, d
   )
 }
 
-// 辅助组件：特色优势卡片
 function FeatureCard({ number, title, description }: { number: string, title: string, description: string }) {
   return (
     <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
