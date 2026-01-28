@@ -42,12 +42,12 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-10 text-slate-800">Shop Accessories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <CategoryCard image="/images/iphone-acc.jpg" title="iPhone Accessories" link="https://phonehero.odoo.com/shop/category/accessories-phone-case-iphone-case-1" />
-            <CategoryCard image="/images/samsung-acc.jpg" title="Samsung Accessories" link="https://phonehero.odoo.com/shop/category/accessories-phone-case-samsung-case-7" />
-            <CategoryCard image="/images/charger-cable.jpg" title="Charger & Cables" link="https://phonehero.odoo.com/shop/category/accessories-charges-cables-54" />
-            <CategoryCard image="/images/power-bank.jpg" title="Power Bank" link="https://phonehero.odoo.com/shop/category/accessories-power-bank-55" />
-            <CategoryCard image="/images/car-holder.jpg" title="Car Holders" link="https://phonehero.odoo.com/shop/category/accessories-mounts-car-accessories-57" />
-            <CategoryCard image="/images/shop-all.jpg" title="Shop All" link="https://phonehero.odoo.com/shop" isHighlight />
+            <CategoryCard image="/images/iphone-acc.jpg" title="iPhone Accessories" link="https://shop.phonetime.com.au/shop/category/accessories-phone-case-iphone-case-1" />
+            <CategoryCard image="/images/samsung-acc.jpg" title="Samsung Accessories" link="https://shop.phonetime.com.au/shop/category/accessories-phone-case-samsung-case-7" />
+            <CategoryCard image="/images/charger-cable.jpg" title="Charger & Cables" link="https://shop.phonetime.com.au/shop/category/accessories-charges-cables-54" />
+            <CategoryCard image="/images/power-bank.jpg" title="Power Bank" link="https://shop.phonetime.com.au/shop/category/accessories-power-bank-55" />
+            <CategoryCard image="/images/car-holder.jpg" title="Car Holders" link="https://shop.phonetime.com.au/shop/category/accessories-mounts-car-accessories-57" />
+            <CategoryCard image="/images/shop-all.jpg" title="Shop All" link="https://shop.phonetime.com.au/" isHighlight />
           </div>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><Link href="/price-check" className="hover:text-teal-400 transition-colors">Repair Prices</Link></li>
                 <li><Link href="/appointment" className="hover:text-teal-400 transition-colors">Book a Repair</Link></li>
-                <li><Link href="https://phonehero.odoo.com/shop" target="_blank" className="hover:text-teal-400 transition-colors">Shop Accessories</Link></li>
+                <li><Link href="https://shop.phonetime.com.au/" target="_blank" className="hover:text-teal-400 transition-colors">Shop Accessories</Link></li>
               </ul>
             </div>
           </div>
