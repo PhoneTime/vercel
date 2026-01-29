@@ -49,7 +49,7 @@ export default function Header() {
           ))}
           {/* Accessories 链接依然独立存在，放在 Home 之后 */}
           <a
-            href="https://shop.phonetime.com.au/shop/category/accessories-8"
+            href="https://shop.phonetime.com.au"
             className="text-gray-700 hover:text-teal-600 transition"
             target="_blank"
             rel="noopener noreferrer"
