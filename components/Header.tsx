@@ -79,7 +79,7 @@ export default function Header() {
               Home
             </Link>
             <a
-              href="https://shop.phonetime.com.au/shop/category/accessories-8"
+              href="https://shop.phonetime.com.au"
               className="block text-gray-700 hover:text-teal-600 transition"
               onClick={() => setMenuOpen(false)}
               target="_blank"
