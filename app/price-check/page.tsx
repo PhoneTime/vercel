@@ -13,20 +13,20 @@ const repairPrices = {
   iPhone: {
     // --- NEW iPhone 16 Series (Estimated Prices) ---
     "iPhone 16 Pro Max": {
-      "Screen Replacement": 389, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 249,
+      "Screen Replacement": 229, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 249,
     },
     "iPhone 16 Pro": {
-      "Screen Replacement": 289, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 239,
+      "Screen Replacement": 209, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 239,
     },
     "iPhone 16 Plus": {
-      "Screen Replacement": 239, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 219,
+      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 219,
     },
     "iPhone 16": {
-      "Screen Replacement": 229, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 209,
+      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 209,
     },
     // --- End NEW iPhone 16 Series ---
     "iPhone 15 Pro Max": {
-      "Screen Replacement": 209, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 229,
+      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 229,
     },
     "iPhone 15 Pro": {
       "Screen Replacement": 189, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 219,
@@ -35,40 +35,40 @@ const repairPrices = {
       "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 209,
     },
     "iPhone 15": {
-      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 199,
+      "Screen Replacement": 169, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 199,
     },
     "iPhone 14 Pro Max": {
-      "Screen Replacement": 199, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 219,
+      "Screen Replacement": 189, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 219,
     },
     "iPhone 14 Pro": {
-      "Screen Replacement": 189, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 209,
+      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 209,
     },
     "iPhone 14 Plus": {
-      "Screen Replacement": 179, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 199,
+      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 199,
     },
     "iPhone 14": {
-      "Screen Replacement": 179, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 189,
+      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 189,
     },
     "iPhone 13 Pro Max": {
-      "Screen Replacement": 179, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 199,
+      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 199,
     },
     "iPhone 13 Pro": {
-      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 189,
+      "Screen Replacement": 159, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 189,
     },
     "iPhone 13": {
-      "Screen Replacement": 159, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
+      "Screen Replacement": 149, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 13 Mini": {
-      "Screen Replacement": 169, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
+      "Screen Replacement": 159, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
     },
     "iPhone 12 Pro Max": {
-      "Screen Replacement": 159, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
+      "Screen Replacement": 149, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 12 Pro": {
-      "Screen Replacement": 149, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
+      "Screen Replacement": 129, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 169,
     },
     "iPhone 12": {
-      "Screen Replacement": 149, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 159,
+      "Screen Replacement": 129, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 99, "Back Glass Repair": 159,
     },
     "iPhone 12 Mini": {
       "Screen Replacement": 159, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
@@ -77,7 +77,7 @@ const repairPrices = {
       "Screen Replacement": 139, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 159,
     },
     "iPhone 11 Pro": {
-      "Screen Replacement": 139, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
+      "Screen Replacement": 129, "Battery Replacement": 109, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 149,
     },
     "iPhone 11": {
       "Screen Replacement": 119, "Battery Replacement": 99, "Charging Port Repair": 89, "Water Damage Treatment": 89, "Back Glass Repair": 139,

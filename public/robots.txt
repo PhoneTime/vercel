@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.phonetop.com.au
+Host: https://www.phonetime.com.au
 
 # Sitemaps
-Sitemap: https://www.phonetop.com.au/sitemap.xml
+Sitemap: https://www.phonetime.com.au/sitemap.xml
