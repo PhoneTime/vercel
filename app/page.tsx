@@ -12,7 +12,7 @@ import {
 export const metadata = {
   title: 'Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs',
   description: 'Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs. affordable prices and best parts at your door.',
-  keywords: ['phone repair Kilsyth', 'on-site phone repair Melbourne', 'mobile phone repair Eastern Suburbs', 'cheap iPhone repair', 'Phone Time'],
+  keywords: ['phone repair Kilsyth', 'on-site phone repair Melbourne', 'mobile phone repair Eastern Suburbs', 'affordable iPhone repair', 'Phone Time'],
 }
 
 export default function Home() {
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard number="1" title="We Come To You" description="Serving Kilsyth and all Eastern Suburbs. No extra travel fees applied!" />
             <FeatureCard number="2" title="Best Quality Parts" description="We use only the highest-grade parts to ensure your phone lasts." />
-            <FeatureCard number="3" title="Cheap & Fast" description="Professional service at a price that won't break the bank." />
+            <FeatureCard number="3" title="affordable & Fast" description="Professional service at a price that won't break the bank." />
           </div>
         </div>
       </section>
