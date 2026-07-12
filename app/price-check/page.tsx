@@ -11,49 +11,63 @@ import { CheckCircleIcon } from "lucide-react"
 // --- Updated Phone repair price data ---
 const repairPrices = {
   iPhone: {
-    // --- NEW iPhone 16 Series (Estimated Prices) ---
+    // --- NEW iPhone 17 Series (Initial placeholder price: $1) ---
+    "iPhone 17 Pro Max": {
+      "Screen Replacement": 249, "Battery Replacement": 169, "Charging Port Repair": 149, "Water Damage Treatment": 99, "Back Glass Repair": 199,
+    },
+    "iPhone 17 Pro": {
+      "Screen Replacement": 239, "Battery Replacement": 169, "Charging Port Repair": 149, "Water Damage Treatment": 99, "Back Glass Repair": 199,
+    },
+    "iPhone 17": {
+      "Screen Replacement": 209, "Battery Replacement": 169, "Charging Port Repair": 149, "Water Damage Treatment": 99, "Back Glass Repair": 199,
+    },
+    "iPhone 17 Air": {
+      "Screen Replacement": 329, "Battery Replacement": 169, "Charging Port Repair": 149, "Water Damage Treatment": 99, "Back Glass Repair": 199,
+    },
+    // --- End NEW iPhone 17 Series ---
+    // --- iPhone 16 Series ---
     "iPhone 16 Pro Max": {
-      "Screen Replacement": 229, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 249,
+      "Screen Replacement": 229, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
     "iPhone 16 Pro": {
-      "Screen Replacement": 209, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 239,
+      "Screen Replacement": 209, "Battery Replacement": 159, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
     "iPhone 16 Plus": {
-      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 219,
+      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
     "iPhone 16": {
-      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 209,
+      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
-    // --- End NEW iPhone 16 Series ---
+    // --- End iPhone 16 Series ---
     "iPhone 15 Pro Max": {
-      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 229,
+      "Screen Replacement": 199, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
     "iPhone 15 Pro": {
-      "Screen Replacement": 189, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 219,
+      "Screen Replacement": 189, "Battery Replacement": 149, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
     "iPhone 15 Plus": {
-      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 209,
+      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
     "iPhone 15": {
-      "Screen Replacement": 169, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 199,
+      "Screen Replacement": 169, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 179,
     },
     "iPhone 14 Pro Max": {
-      "Screen Replacement": 189, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 219,
+      "Screen Replacement": 189, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 14 Pro": {
-      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 209,
+      "Screen Replacement": 179, "Battery Replacement": 139, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 14 Plus": {
-      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 199,
+      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 14": {
-      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 189,
+      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 109, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 13 Pro Max": {
-      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 199,
+      "Screen Replacement": 169, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 13 Pro": {
-      "Screen Replacement": 159, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 189,
+      "Screen Replacement": 159, "Battery Replacement": 129, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
     },
     "iPhone 13": {
       "Screen Replacement": 149, "Battery Replacement": 119, "Charging Port Repair": 99, "Water Damage Treatment": 89, "Back Glass Repair": 179,
@@ -161,6 +175,17 @@ const repairPrices = {
     },
   },
   Samsung: {
+    // --- NEW Samsung S26 Series (Initial placeholder price:) ---
+    "Galaxy S26 Ultra": {
+      "Screen Replacement": 479, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+    },
+    "Galaxy S26+": {
+      "Screen Replacement": 399, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+    },
+    "Galaxy S26": {
+      "Screen Replacement": 369, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
+    },
+    // --- End NEW Samsung S26 Series ---
     // S Series
     "Galaxy S25 Ultra": {
       "Screen Replacement": 459, "Battery Replacement": 139, "Charging Port Repair": 119, "Water Damage Treatment": 99, "Back Glass Repair": 99,
@@ -233,11 +258,10 @@ const repairPrices = {
     },
 
     // A Series
-    // --- NEW Samsung A Series (Estimated Prices) ---
-     "Galaxy A56": {
+    "Galaxy A56": {
       "Screen Replacement": 189, "Battery Replacement": 89, "Charging Port Repair": 89, "Water Damage Treatment": 109, "Back Glass Repair": 99,
     },
-     "Galaxy A55": {
+    "Galaxy A55": {
       "Screen Replacement": 179, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 109, "Back Glass Repair": 89,
     },
     "Galaxy A36": {
@@ -246,13 +270,12 @@ const repairPrices = {
     "Galaxy A35": {
       "Screen Replacement": 219, "Battery Replacement": 89, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
-     "Galaxy A25": {
+    "Galaxy A25": {
       "Screen Replacement": 169, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 99, "Back Glass Repair": 89,
     },
     "Galaxy A16": {
       "Screen Replacement": 189, "Battery Replacement": 79, "Charging Port Repair": 79, "Water Damage Treatment": 89, "Back Glass Repair": 89,
     },
-    // --- End NEW Samsung A Series ---
     "Galaxy A54": {
       "Screen Replacement": 219, "Battery Replacement": 79, "Charging Port Repair": 69, "Water Damage Treatment": 109, "Back Glass Repair": 79,
     },
@@ -281,7 +304,7 @@ const repairPrices = {
       "Screen Replacement": 149, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
     },
     "Galaxy A14": {
-      "Screen Replacement": 189, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
+      "Screen Replacement": 189, "Water Damage Treatment": 89, "Battery Replacement": 69, "Charging Port Repair": 69, "Back Glass Repair": 79,
     },
     "Galaxy A13": {
       "Screen Replacement": 159, "Battery Replacement": 69, "Charging Port Repair": 69, "Water Damage Treatment": 89, "Back Glass Repair": 79,
@@ -311,34 +334,27 @@ const repairPrices = {
     },
   },
   Google: {
-     // --- NEW/Updated Google Pixel Models (Prices as requested/estimated) ---
     "Pixel Fold 9": {
-      "Screen Replacement": 699, // <-- UPDATED PRICE
-      "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 199, "Back Glass Repair": 199,
+      "Screen Replacement": 699, "Battery Replacement": 149, "Charging Port Repair": 129, "Water Damage Treatment": 199, "Back Glass Repair": 199,
     },
     "Pixel 9 Pro XL": {
-      "Screen Replacement": 519, // <-- UPDATED PRICE
-      "Battery Replacement": 129, "Charging Port Repair": 119, "Water Damage Treatment": 159, "Back Glass Repair": 149,
+      "Screen Replacement": 519, "Battery Replacement": 129, "Charging Port Repair": 119, "Water Damage Treatment": 159, "Back Glass Repair": 149,
     },
-     "Pixel 9 Pro": {
-      "Screen Replacement": 499, // <-- UPDATED PRICE
-      "Battery Replacement": 129, "Charging Port Repair": 119, "Water Damage Treatment": 159, "Back Glass Repair": 139,
+    "Pixel 9 Pro": {
+      "Screen Replacement": 499, "Battery Replacement": 129, "Charging Port Repair": 119, "Water Damage Treatment": 159, "Back Glass Repair": 139,
     },
-     "Pixel 9": {
+    "Pixel 9": {
       "Screen Replacement": 329, "Battery Replacement": 119, "Charging Port Repair": 119, "Water Damage Treatment": 159, "Back Glass Repair": 129,
     },
-     "Pixel 8 Pro": {
-      "Screen Replacement": 399, // <-- UPDATED PRICE
-      "Battery Replacement": 119, "Charging Port Repair": 109, "Water Damage Treatment": 149, "Back Glass Repair": 129,
+    "Pixel 8 Pro": {
+      "Screen Replacement": 399, "Battery Replacement": 119, "Charging Port Repair": 109, "Water Damage Treatment": 149, "Back Glass Repair": 129,
     },
-    "Pixel 8a": { // <-- NEW MODEL
-      "Screen Replacement": 279, // <-- UPDATED PRICE
-      "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 129, "Back Glass Repair": 99,
+    "Pixel 8a": {
+      "Screen Replacement": 279, "Battery Replacement": 99, "Charging Port Repair": 99, "Water Damage Treatment": 129, "Back Glass Repair": 99,
     },
     "Pixel 8": {
       "Screen Replacement": 309, "Battery Replacement": 109, "Charging Port Repair": 109, "Water Damage Treatment": 149, "Back Glass Repair": 119,
     },
-     // --- End NEW Google Pixel Models ---
     "Pixel 7 Pro": {
       "Screen Replacement": 299, "Battery Replacement": 109, "Charging Port Repair": 99, "Water Damage Treatment": 139, "Back Glass Repair": 119,
     },
@@ -365,7 +381,6 @@ const repairPrices = {
     },
   },
 } // End of repairPrices object
-// --- End Updated Phone repair price data ---
 
 
 // --- React Component Definition ---
@@ -375,7 +390,6 @@ export default function PriceCheck() {
   const [selectedRepair, setSelectedRepair] = useState("")
 
   // Logic to get brands, models, repairs based on state
-  // Type assertion added for safety, assuming structure is known
   const brands = Object.keys(repairPrices)
   const models = brand ? Object.keys(repairPrices[brand as keyof typeof repairPrices]) : []
   const repairs = brand && model ? Object.keys(repairPrices[brand as keyof typeof repairPrices][model as keyof typeof repairPrices[keyof typeof repairPrices]]) : []
@@ -387,7 +401,6 @@ export default function PriceCheck() {
                   [selectedRepair as keyof typeof repairPrices[keyof typeof repairPrices][keyof typeof repairPrices[keyof typeof repairPrices]]]
     : null
 
-  // Handler functions remain the same
   const handleBrandChange = (value: string) => {
     setBrand(value)
     setModel("")
@@ -399,7 +412,6 @@ export default function PriceCheck() {
     setSelectedRepair("")
   }
 
-  // JSX Structure remains the same as your original code
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
@@ -477,7 +489,6 @@ export default function PriceCheck() {
                     <p className="font-medium">{selectedRepair}</p>
                   </div>
                   <div className="text-2xl font-bold text-teal-500">${price}</div>
-                  {/* NOTE: The logic to display "(Full original)" is NOT included here, as requested */}
                 </div>
               </div>
             )}
@@ -496,7 +507,7 @@ export default function PriceCheck() {
             {price !== null && (
               <Link
                 href={{
-                  pathname: "/appointment", // Ensure this path is correct for your project
+                  pathname: "/appointment",
                   query: { brand, model, repair: selectedRepair, price },
                 }}
               >
@@ -509,7 +520,6 @@ export default function PriceCheck() {
           </CardFooter>
         </Card>
 
-        {/* About section remains the same */}
         <div className="mt-8 bg-slate-50 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">About Our Repair Services</h3>
           <ul className="space-y-2">
