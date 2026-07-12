@@ -11,7 +11,7 @@ import {
 
 export const metadata = {
   title: 'Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs',
-  description: 'Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs. Cheap prices and best parts at your door.',
+  description: 'Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs. affordable prices and best parts at your door.',
   keywords: ['phone repair Kilsyth', 'on-site phone repair Melbourne', 'mobile phone repair Eastern Suburbs', 'cheap iPhone repair', 'Phone Time'],
 }
 
@@ -25,7 +25,7 @@ export default function Home() {
             <Image src="/images/phonetime-logo.png" alt="Phone Time" width={112} height={112} className="object-contain" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">On-site Phone Repairs Kilsyth & Eastern Suburbs</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Cheap prices, best parts, at your door across Melbourne's East.</p>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Top-quality repairs at affordable prices, delivered right to your door in Melbourne's East.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/price-check">
               <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100 font-bold">Check Repair Prices</Button>
@@ -100,7 +100,7 @@ export default function Home() {
             <div>
               <h3 className="text-white font-bold text-lg mb-4">Phone Time</h3>
               <p className="text-sm leading-relaxed mb-4 italic">
-                "Kilsyth's trusted on-site phone repair specialist. Best parts, cheap prices."
+                "Kilsyth's trusted on-site phone repair specialist. Best parts, affordable prices."
               </p>
               <p className="text-teal-500 font-bold text-lg">0468 897 890</p>
             </div>
