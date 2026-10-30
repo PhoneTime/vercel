@@ -69,7 +69,7 @@ export default async function RepairPage({ params }: P) {
               <div className="rounded-3xl border border-line bg-white p-6">
                 <h2 className="text-xl font-bold">Price on request</h2>
                 <p className="mt-2 text-muted2">Send the details and I&apos;ll reply with a quote.</p>
-                <Link href={`/book?model=${encodeURIComponent(m.model)}`} className="mt-4 inline-block rounded-full bg-ink px-6 py-3 font-semibold text-white">Ask for a quote</Link>
+                <Link href={`/book?mode=quote&model=${encodeURIComponent(m.model)}`} className="mt-4 inline-block rounded-full bg-ink px-6 py-3 font-semibold text-white">Ask for a quote</Link>
               </div>
             )}
             {fs.map((f) => (
@@ -116,8 +116,8 @@ export default async function RepairPage({ params }: P) {
           <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
             <div className="rounded-3xl bg-mat p-6">
               <h2 className="text-lg font-bold">Not sure what&apos;s wrong?</h2>
-              <p className="mt-2 text-muted2">Describe the problem when you book and I&apos;ll confirm the repair and price before coming out.</p>
-              <Link href={`/book?model=${encodeURIComponent(m.model)}`} className="mt-4 inline-block font-semibold text-teal-800 underline underline-offset-4">Book and describe the issue</Link>
+              <p className="mt-2 text-muted2">Describe the problem and I&apos;ll reply with a price. No obligation.</p>
+              <Link href={`/book?mode=quote&model=${encodeURIComponent(m.model)}`} className="mt-4 inline-block rounded-full bg-ink px-5 py-2.5 font-semibold text-white hover:bg-teal-800">Get a free quote</Link>
             </div>
             {siblings.length > 0 && (
               <div>

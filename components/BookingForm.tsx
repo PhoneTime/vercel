@@ -56,11 +56,14 @@ export default function BookingForm() {
   const [notes, setNotes] = useState("")
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle")
   const [tried, setTried] = useState(false)
+  const [mode, setMode] = useState<"book" | "quote">("book")
+  const quote = mode === "quote"
 
   /* Arriving from a price page: ?model=iPhone 15&repair=Screen */
   const qs = sp.toString()
   useEffect(() => {
     const sp = new URLSearchParams(qs)
+    setMode(sp.get("mode") === "quote" ? "quote" : "book")
     const m = sp.get("model")
     if (!m) return
     const b = brands.find((x) => x.g.some((g) => g.ms.includes(m)))
@@ -108,7 +111,7 @@ export default function BookingForm() {
   const ok = {
     device: !!device,
     repair: lines.length > 0,
-    when: !!day && !!win && addr.trim().length > 4,
+    when: quote ? addr.trim().length > 1 : !!day && !!win && addr.trim().length > 4,
     you: name.trim().length > 1 && phone.replace(/\D/g, "").length >= 8,
   }
   const ready = ok.device && ok.repair && ok.when && ok.you
@@ -127,19 +130,19 @@ export default function BookingForm() {
 
   const message = () => {
     const r = lines.map((x) => ({ n: x.n, v: x.v, p: x.p }))
-    const payload = { v: 1, n: name.trim(), ph: phone.trim(), em: email.trim(), a: addr.trim(), b: brand, m: device, r, d: day, w: win, no: notes.trim() }
+    const payload = { v: 1, q: quote ? 1 : 0, n: name.trim(), ph: phone.trim(), em: email.trim(), a: addr.trim(), b: brand, m: device, r, d: quote ? "" : day, w: quote ? "" : win, no: notes.trim() }
     let tok = ""
     try {
       tok = btoa(unescape(encodeURIComponent(JSON.stringify(payload)))).replace(/=+$/, "")
     } catch {}
     const est = (total ? money(total) : "") + (needsQuote ? (total ? " + quote" : "quote needed") : "")
     return (
-      "New repair booking request\n" +
+      (quote ? "New quote request\n" : "New repair booking request\n") +
       `Name: ${name.trim()}\nMobile: ${phone.trim()}` + (email.trim() ? `\nEmail: ${email.trim()}` : "") +
       `\nPhone: ${device}\nRepair: ${lines.map((x) => x.n + (x.v ? ` (${x.v})` : "") + (x.p != null ? " " + money(x.p) : "")).join(", ")}` +
       `\nEstimate: ${est}` +
-      (day ? `\nWhen: ${dayLabel(day)}, ${win}` : "") +
-      (addr.trim() ? `\nAddress: ${addr.trim()}` : "") +
+      (!quote && day ? `\nWhen: ${dayLabel(day)}, ${win}` : "") +
+      (addr.trim() ? `\n${quote ? "Area" : "Address"}: ${addr.trim()}` : "") +
       (notes.trim() ? `\nNotes: ${notes.trim()}` : "") +
       (tok ? `\n\nBooking code (please keep):\n[PTB:${tok}]` : "")
     )
@@ -162,7 +165,7 @@ export default function BookingForm() {
           phone: phone.trim(),
           address: addr.trim(),
           device,
-          _subject: `New booking: ${device} – ${name.trim()}`,
+          _subject: `${quote ? "New quote request" : "New booking"}: ${device} – ${name.trim()}`,
           message: message(),
         }),
       })
@@ -182,9 +185,11 @@ export default function BookingForm() {
         <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-teal-600 text-white">
           <Check className="h-8 w-8" strokeWidth={3} aria-hidden />
         </div>
-        <h2 className="mt-5 text-3xl font-extrabold tracking-tight">Thanks, {name.trim().split(" ")[0]}. Request sent.</h2>
+        <h2 className="mt-5 text-3xl font-extrabold tracking-tight">Thanks, {name.trim().split(" ")[0]}. {quote ? "Quote request sent." : "Request sent."}</h2>
         <p className="mx-auto mt-3 max-w-md text-lg text-muted2">
-          I&apos;ll text you on {phone.trim()} to confirm the time for your {device} repair{day ? ` on ${dayLabel(day)}` : ""}.
+          {quote
+            ? `I'll send your quote for the ${device} by text${email.trim() ? " or email" : ""}. No obligation – book only if you're happy with it.`
+            : `I'll text you on ${phone.trim()} to confirm the time for your ${device} repair${day ? ` on ${dayLabel(day)}` : ""}.`}
         </p>
         <p className="mt-6 text-muted2">Need it sooner? Call <a href={telHref} className="font-semibold text-ink underline">{SITE.phone}</a></p>
         <Link href="/" className="mt-8 inline-block rounded-full border border-line px-6 py-3 font-semibold hover:bg-mat">Back to home</Link>
@@ -197,6 +202,21 @@ export default function BookingForm() {
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
       <div className="min-w-0 space-y-5">
+        <div className="grid grid-cols-2 gap-1.5 rounded-full border border-line bg-white p-1.5" role="radiogroup" aria-label="What would you like to do?">
+          {([["book", "Book a repair"], ["quote", "Just get a quote"]] as const).map(([k, t]) => (
+            <button
+              key={k}
+              type="button"
+              role="radio"
+              aria-checked={mode === k}
+              onClick={() => { setMode(k); setTried(false) }}
+              className={`rounded-full px-4 py-3 text-[15px] font-semibold transition-colors sm:text-base ${mode === k ? "bg-ink text-white" : "text-ink hover:bg-mat"}`}
+            >
+              {t}
+            </button>
+          ))}
+        </div>
+        {quote && <p className="px-2 text-[15px] text-muted2">Tell me the phone and the problem, and I&apos;ll reply with a price. No obligation and no need to pick a time yet.</p>}
         <Step n={1} title="Your phone" done={ok.device}>
           <div data-missing={miss("device")} className="flex flex-wrap gap-2" role="radiogroup" aria-label="Brand">
             {[...brands.map((x) => x.n), OTHER].map((n) => (
@@ -315,6 +335,34 @@ export default function BookingForm() {
           )}
         </Step>
 
+        {quote ? (
+        <Step n={3} title="Your details" done={ok.when && ok.you}>
+          <div data-missing={miss("you") || miss("when")} className="grid gap-4 sm:grid-cols-2">
+            <label className="block">
+              <span className="text-[15px] font-medium text-muted2">Name</span>
+              <input value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" autoCapitalize="words" className={inputCls + " mt-1.5"} />
+            </label>
+            <label className="block">
+              <span className="text-[15px] font-medium text-muted2">Mobile number</span>
+              <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" inputMode="tel" autoComplete="tel" className={inputCls + " mt-1.5"} />
+            </label>
+            <label className="block">
+              <span className="text-[15px] font-medium text-muted2">Email (optional)</span>
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" autoComplete="email" autoCapitalize="off" className={inputCls + " mt-1.5"} />
+            </label>
+            <label className="block">
+              <span className="text-[15px] font-medium text-muted2">Suburb or address</span>
+              <input value={addr} onChange={(e) => setAddr(e.target.value)} autoComplete="address-level2" placeholder="e.g. Croydon" className={inputCls + " mt-1.5"} />
+            </label>
+            <label className="block sm:col-span-2">
+              <span className="text-[15px] font-medium text-muted2">Describe the problem</span>
+              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} placeholder="What happened and what's not working, e.g. dropped it, screen has lines and touch doesn't work at the bottom" className={inputCls + " mt-1.5"} />
+            </label>
+          </div>
+          <p className="mt-2 text-[14px] text-muted2">Just the suburb is fine for a quote.</p>
+          {(miss("you") || miss("when")) && <p className="mt-3 font-medium text-red-700">Add your name, a mobile number and your suburb.</p>}
+        </Step>
+        ) : (<>
         <Step n={3} title="When and where" done={ok.when}>
           <div data-missing={miss("when")}>
             <p className="text-[15px] font-medium text-muted2">Day</p>
@@ -381,11 +429,12 @@ export default function BookingForm() {
           </div>
           {miss("you") && <p className="mt-3 font-medium text-red-700">Add your name and a mobile number so I can confirm.</p>}
         </Step>
+        </>)}
       </div>
 
       {/* Summary: sticky on desktop, at the end on phones */}
       <aside className="rounded-[28px] bg-ink p-6 text-white lg:sticky lg:top-24">
-        <h2 className="text-lg font-bold">Your booking</h2>
+        <h2 className="text-lg font-bold">{quote ? "Your quote request" : "Your booking"}</h2>
         <dl className="mt-4 space-y-3 text-[15px]">
           <div className="flex justify-between gap-4"><dt className="text-white/60">Phone</dt><dd className="text-right font-semibold">{device || "–"}</dd></div>
           {lines.map((x) => (
@@ -394,13 +443,13 @@ export default function BookingForm() {
               <dd className="font-semibold tnum">{x.p != null ? money(x.p) : "Quote"}</dd>
             </div>
           ))}
-          {day && <div className="flex justify-between gap-4"><dt className="text-white/60">When</dt><dd className="text-right font-semibold">{dayLabel(day)}{win ? `, ${win}` : ""}</dd></div>}
+          {!quote && day && <div className="flex justify-between gap-4"><dt className="text-white/60">When</dt><dd className="text-right font-semibold">{dayLabel(day)}{win ? `, ${win}` : ""}</dd></div>}
         </dl>
         <div className="mt-5 flex items-baseline justify-between border-t border-white/15 pt-4">
           <span className="text-white/70">Estimate</span>
           <span className="text-3xl font-extrabold tnum">{total ? money(total) : needsQuote ? "Quote" : "$0"}{total && needsQuote ? <span className="text-base font-semibold text-white/70"> + quote</span> : null}</span>
         </div>
-        <p className="mt-2 text-sm text-white/60">Includes parts, labour and coming to you. Price confirmed before I start.</p>
+        <p className="mt-2 text-sm text-white/60">{quote ? "Online prices include parts, labour and coming to you. I'll confirm the final price in your quote." : "Includes parts, labour and coming to you. Price confirmed before I start."}</p>
 
         <button
           type="button"
@@ -409,7 +458,7 @@ export default function BookingForm() {
           className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-aqua px-6 py-4 text-lg font-bold text-ink transition-colors hover:bg-white disabled:opacity-70"
         >
           {state === "sending" && <Loader2 className="h-5 w-5 animate-spin" aria-hidden />}
-          {state === "sending" ? "Sending…" : "Send booking request"}
+          {state === "sending" ? "Sending…" : quote ? "Send quote request" : "Send booking request"}
         </button>
         {tried && !ready && <p className="mt-3 text-sm text-[#ffd0c9]">A few details are missing above.</p>}
         {state === "error" && (

@@ -127,6 +127,7 @@ export function CtaBand({ title = "Need it fixed today?", text = "Most repairs a
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link href="/book" className="rounded-full bg-aqua px-7 py-4 text-center text-lg font-bold text-ink hover:bg-white">Book a repair</Link>
+          <Link href="/book?mode=quote" className="rounded-full border border-white/25 px-7 py-4 text-center text-lg font-semibold hover:bg-white/10">Get a quote</Link>
           <a href={telHref} className="flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-lg font-semibold tnum hover:bg-white/10">
             <Phone className="h-5 w-5" aria-hidden /> {SITE.phone}
           </a>

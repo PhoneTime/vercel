@@ -53,6 +53,7 @@ export default function Home() {
                 <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phone}
               </a>
             </div>
+            <Link href="/book?mode=quote" className="mt-5 inline-block font-semibold text-aqua underline underline-offset-4 hover:text-white">Not sure what&apos;s wrong? Get a free quote</Link>
           </div>
           <PriceFinder compact />
         </Container>

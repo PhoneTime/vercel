@@ -62,7 +62,7 @@ export default function PriceFinder({ initialModel = "", compact = false }: { in
       <ul className="mt-4 divide-y divide-line" aria-live="polite">
         {faults.length === 0 && (
           <li className="py-4 text-muted2">
-            Prices for this model are quoted on request. <Link href={`/book?model=${encodeURIComponent(model)}`} className="font-semibold text-teal-700 underline">Ask for a quote</Link>
+            Prices for this model are quoted on request. <Link href={`/book?mode=quote&model=${encodeURIComponent(model)}`} className="font-semibold text-teal-700 underline">Ask for a quote</Link>
           </li>
         )}
         {(compact ? faults.slice(0, 4) : faults).map((f) => {
