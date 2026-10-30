@@ -58,7 +58,6 @@ export default function PricesPage() {
                         <tr><th colSpan={5} scope="colgroup" className="bg-paper px-5 py-2 text-sm font-semibold text-teal-800">{g.l}</th></tr>
                       )}
                       {g.ms.map((m) => {
-                        const has = faultsFor(m).length > 0
                         return (
                           <tr key={m} className="border-t border-line/70 hover:bg-mat/50">
                             <th scope="row" className="px-5 py-3 font-semibold">
@@ -66,7 +65,7 @@ export default function PricesPage() {
                             </th>
                             {COLS.map((c) => {
                               const v = fromPrice(prices[m]?.[c])
-                              return <td key={c} className="px-4 py-3 text-right">{v != null ? money(v) : <span className="text-muted2">{has ? "–" : "Quote"}</span>}</td>
+                              return <td key={c} className="px-4 py-3 text-right">{v != null ? money(v) : <Link href={`/book?mode=quote&model=${encodeURIComponent(m)}`} className="text-[15px] font-medium text-teal-700 hover:underline">Quote</Link>}</td>
                             })}
                           </tr>
                         )
@@ -77,7 +76,7 @@ export default function PricesPage() {
               </div>
             </div>
           ))}
-          <p className="mt-8 text-sm text-muted2">Where a model has several part options, the lowest price is shown. Tap a model for every option.</p>
+          <p className="mt-8 text-sm text-muted2">Where a model has several part options, the lowest price is shown. Tap a model for every option, or tap Quote and I&apos;ll send you a price.</p>
         </Container>
       </section>
       <CtaBand />

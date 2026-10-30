@@ -60,8 +60,9 @@ export const allModels = () => brands.flatMap((b) => b.g.flatMap((g) => g.ms.map
 export const modelBySlug = (s: string) => allModels().find((x) => slug(x.model) === s)
 
 /* Order repairs are shown in, most asked-for first */
-export const FAULT_ORDER = ["Screen", "Battery", "Charging port", "Back glass", "Housing", "Camera", "Water damage", "Other"]
+export const FAULT_ORDER = ["Screen", "Touch screen", "Battery", "Charging port", "Back glass", "Housing", "Camera", "Water damage", "Other"]
 export const FAULT_INFO: Record<string, { name: string; blurb: string }> = {
+  "Touch screen": { name: "Touch glass replacement", blurb: "Cracked glass on top while the picture underneath still works." },
   Screen: { name: "Screen replacement", blurb: "Cracked glass, lines, black spots or touch that stops working." },
   Battery: { name: "Battery replacement", blurb: "Phone dies early, shuts off at 20% or the battery is swelling." },
   "Charging port": { name: "Charging port repair", blurb: "Cable feels loose, charges only at an angle, or not at all." },
