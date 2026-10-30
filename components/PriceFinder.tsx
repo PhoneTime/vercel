@@ -24,12 +24,12 @@ export default function PriceFinder({ initialModel = "", compact = false }: { in
   return (
     <div className="rounded-[28px] bg-white p-5 text-ink shadow-[0_30px_60px_-30px_rgba(6,43,42,.55)] ring-1 ring-black/5 sm:p-6">
       <h2 className="text-lg font-bold tracking-tight">Check your price</h2>
-      <div className="mt-3 flex flex-wrap gap-1.5" role="tablist" aria-label="Brand">
+      <div className="mt-3 flex flex-wrap gap-1.5" role="group" aria-label="Brand">
         {brands.map((x, i) => (
           <button
             key={x.n}
-            role="tab"
-            aria-selected={i === bi}
+            type="button"
+            aria-pressed={i === bi}
             onClick={() => pickBrand(i)}
             className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors ${i === bi ? "bg-ink text-white" : "bg-mat text-ink hover:bg-teal-100"}`}
           >
