@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Phone, Star } from "lucide-react"
 import { SITE, telHref, AREAS, slug } from "@/lib/site"
-import { FAQ, GALLERY } from "@/lib/content"
+import { FAQ, GALLERY, GOOGLE, REVIEWS } from "@/lib/content"
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <div className={`mx-auto max-w-6xl px-4 sm:px-6 ${className}`}>{children}</div>
@@ -84,17 +84,34 @@ export function AreaLinks({ limit, current, items }: { limit?: number; current?:
 
 export function ReviewsBand() {
   return (
-    <div className="flex flex-col items-start gap-5 rounded-[28px] bg-mat p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
-      <div>
-        <div className="flex gap-1 text-[#f5a524]" aria-hidden>
-          {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="h-5 w-5 fill-current" />)}
+    <div className="rounded-[28px] bg-mat p-6 sm:p-10">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex items-center gap-5">
+          <div className="text-[56px] font-extrabold leading-none tracking-tight sm:text-[64px]">{GOOGLE.rating.toFixed(1)}</div>
+          <div>
+            <div className="flex gap-0.5 text-[#f5a524]" aria-label={`Rated ${GOOGLE.rating} out of 5`}>
+              {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="h-5 w-5 fill-current" aria-hidden />)}
+            </div>
+            <p className="mt-1 font-semibold">{GOOGLE.count} Google reviews</p>
+          </div>
         </div>
-        <h2 className="mt-3 text-2xl font-extrabold tracking-tight sm:text-3xl">Read what customers say on Google</h2>
-        <p className="mt-2 max-w-lg text-muted2">Ratings and reviews from local customers. Had a repair with me? A quick review helps others find a repairer they can trust.</p>
+        <a href={SITE.google} target="_blank" rel="noopener" className="shrink-0 self-start rounded-full bg-ink px-6 py-3.5 font-semibold text-white hover:bg-teal-800 sm:self-auto">
+          Read all reviews on Google
+        </a>
       </div>
-      <a href={SITE.google} target="_blank" rel="noopener" className="shrink-0 rounded-full bg-ink px-6 py-3.5 font-semibold text-white hover:bg-teal-800">
-        See Google reviews
-      </a>
+      <ul className="mt-8 grid gap-4 md:grid-cols-3">
+        {REVIEWS.map((r) => (
+          <li key={r.name}>
+            <figure className="flex h-full flex-col rounded-3xl bg-white p-5">
+              <div className="flex gap-0.5 text-[#f5a524]" aria-hidden>
+                {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+              </div>
+              <blockquote className="mt-3 flex-1 leading-relaxed">“{r.text}”</blockquote>
+              <figcaption className="mt-4 text-sm text-muted2"><span className="font-semibold text-ink">{r.name}</span> · Google review</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

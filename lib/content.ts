@@ -52,3 +52,13 @@ export const SHOP = [
   { img: "/shop/power-bank.webp", t: "Power banks", href: SITE.shop + "/shop/category/accessories-power-bank-55" },
   { img: "/shop/car-holder.webp", t: "Car holders", href: SITE.shop + "/shop/category/accessories-mounts-car-accessories-57" },
 ]
+
+/* Google rating: update the count now and then (or ask Claude to). */
+export const GOOGLE = { rating: 5.0, count: 48 }
+
+/* Short excerpts from real Google reviews, first name and initial only. */
+export const REVIEWS = [
+  { name: "Maria R.", text: "Utterly exceptional, friendly and came to me on a SUNDAY night!!! The repair was so quick (I am very impressed with the professional setup he brought with him)." },
+  { name: "Tilly E.", text: "I cannot say enough good things about the service kindness and special care they gave me." },
+  { name: "Claude V.", text: "The best job I've ever had done with my mobile." },
+]
