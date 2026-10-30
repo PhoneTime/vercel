@@ -1,174 +1,193 @@
 import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import {
-  PhoneIcon,
-  WrenchIcon,
-  CalendarIcon,
-  CheckCircleIcon,
-  ArrowRightIcon
-} from "lucide-react"
+import { Check, Phone } from "lucide-react"
+import PriceFinder from "@/components/PriceFinder"
+import { Container, SectionHead, Gallery, Faq, faqJsonLd, AreaLinks, ReviewsBand, CtaBand } from "@/components/Blocks"
+import { SITE, telHref, brands, allModels, seriesFrom, FAULT_INFO, money } from "@/lib/site"
+import { SHOP } from "@/lib/content"
 
 export const metadata = {
-  title: 'Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs',
-  description: 'Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs. affordable prices and best parts at your door.',
-  keywords: ['phone repair Kilsyth', 'on-site phone repair Melbourne', 'mobile phone repair Eastern Suburbs', 'affordable iPhone repair', 'Phone Time'],
+  title: { absolute: "Phone Time | On-site Phone Repair in Kilsyth & Melbourne's East" },
+  alternates: { canonical: "/" },
 }
+
+const STEPS = [
+  { t: "Pick your repair", d: "Choose your phone and see the price straight away. No surprises when I arrive." },
+  { t: "Choose a time", d: "Book online or call. Morning, afternoon or evening, any day of the week." },
+  { t: "I fix it at your place", d: "Most repairs are done while you wait. You test the phone, then you pay." },
+]
 
 export default function Home() {
+  const ms = allModels().map((x) => x.model)
+  const popular = ["Screen", "Battery", "Charging port", "Back glass"]
+    .map((f) => ({ f, from: seriesFrom(f, ms) }))
+    .filter((x) => x.from != null)
+
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Section */}
-      <section className="bg-gradient-to-b from-teal-600 to-teal-500 text-white py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center mb-8">
-            <Image src="/images/phonetime-logo.png" alt="Phone Time" width={112} height={112} className="object-contain" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">On-site Phone Repairs Kilsyth & Eastern Suburbs</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Top-quality repairs at affordable prices, delivered right to your door in Melbourne's East.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/price-check">
-              <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100 font-bold">Check Repair Prices</Button>
-            </Link>
-            <Link href="/appointment">
-              <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100 font-bold">Repair Now</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }} />
 
-      {/* 2. Shop Accessories */}
-      <section className="py-16 bg-slate-50 border-b">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-10 text-slate-800">Shop Accessories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <CategoryCard image="/images/iphone-acc.jpg" title="iPhone Accessories" link="https://shop.phonetime.com.au/shop/category/accessories-phone-case-iphone-case-1" />
-            <CategoryCard image="/images/samsung-acc.jpg" title="Samsung Accessories" link="https://shop.phonetime.com.au/shop/category/accessories-phone-case-samsung-case-7" />
-            <CategoryCard image="/images/charger-cable.jpg" title="Charger & Cables" link="https://shop.phonetime.com.au/shop/category/accessories-charges-cables-54" />
-            <CategoryCard image="/images/power-bank.jpg" title="Power Bank" link="https://shop.phonetime.com.au/shop/category/accessories-power-bank-55" />
-            <CategoryCard image="/images/car-holder.jpg" title="Car Holders" link="https://shop.phonetime.com.au/shop/category/accessories-mounts-car-accessories-57" />
-            <CategoryCard image="/images/shop-all.jpg" title="Shop All" link="https://shop.phonetime.com.au/" isHighlight />
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Our Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12 text-slate-800">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ServiceCard icon={<PhoneIcon className="h-10 w-10" />} title="Screen Repairs" description="Fast screen replacement at your location." />
-            <ServiceCard icon={<WrenchIcon className="h-10 w-10" />} title="Battery Replacement" description="Restore your phone's battery life." />
-            <ServiceCard icon={<CheckCircleIcon className="h-10 w-10" />} title="Charging Port" description="Expert fix for charging issues." />
-            <ServiceCard icon={<CalendarIcon className="h-10 w-10" />} title="Same-Day Service" description="Repairs completed at your door." />
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Why Choose Phone Time */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12 text-slate-800">Why Choose Phone Time</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard number="1" title="We Come To You" description="Serving Kilsyth and all Eastern Suburbs. No extra travel fees applied!" />
-            <FeatureCard number="2" title="Best Quality Parts" description="We use only the highest-grade parts to ensure your phone lasts." />
-            <FeatureCard number="3" title="affordable & Fast" description="Professional service at a price that won't break the bank." />
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Bottom Call to Action Section */}
-      <section className="py-16 bg-teal-500 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Need Your Phone Fixed Today?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">Professional mobile phone repair at your door in Kilsyth and surrounding areas.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="tel:0468897890">
-              <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100 font-bold tracking-wide">Call 0468 897 890</Button>
-            </Link>
-            <Link href="/appointment">
-              <Button size="lg" className="bg-slate-800 hover:bg-slate-900 text-white font-bold tracking-wide">Book Online</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Footer - 服务区域按距离排列 (由近及远) */}
-      <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-left">
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Phone Time</h3>
-              <p className="text-sm leading-relaxed mb-4 italic">
-                "Kilsyth's trusted on-site phone repair specialist. Best parts, affordable prices."
-              </p>
-              <p className="text-teal-500 font-bold text-lg">0468 897 890</p>
-            </div>
-
-            {/* 排序逻辑：Kilsyth核心 -> 邻接Suburbs -> 外部辐射区 */}
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Service Areas</h3>
-              <p className="text-xs leading-loose tracking-wide">
-                **Kilsyth** | Mooroolbark | Croydon South | Croydon North | Bayswater North | 
-                Bayswater | Montrose | Mount Evelyn | Lilydale | Boronia | 
-                Wantirna | Wantirna South | Ferntree Gully | Rowville & Most Melbourne Eastern Suburbs.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center md:items-end text-sm">
-              <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link href="/price-check" className="hover:text-teal-400 transition-colors">Repair Prices</Link></li>
-                <li><Link href="/appointment" className="hover:text-teal-400 transition-colors">Book a Repair</Link></li>
-                <li><Link href="https://shop.phonetime.com.au/" target="_blank" className="hover:text-teal-400 transition-colors">Shop Accessories</Link></li>
-              </ul>
+      {/* Hero: the promise on the left, the price check on the right */}
+      <section className="relative overflow-hidden bg-ink text-white">
+        <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-teal-600/30 blur-3xl" />
+        <Container className="relative grid gap-10 pb-14 pt-12 sm:pt-16 lg:grid-cols-[1.08fr_1fr] lg:items-center lg:gap-14 lg:pb-24 lg:pt-20">
+          <div>
+            <h1 className="text-[44px] font-extrabold leading-[0.98] tracking-[-0.035em] sm:text-[64px] lg:text-[76px]">
+              Broken phone? I&nbsp;come to&nbsp;you.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
+              Screens, batteries, charging ports and back glass for iPhone, Samsung, Pixel and iPad, repaired at your home or work across {SITE.area}.
+            </p>
+            <ul className="mt-7 grid max-w-md grid-cols-1 gap-x-6 gap-y-2.5 text-[15px] text-white/90 min-[400px]:grid-cols-2">
+              {["Most repairs same day", "No travel fee", `${SITE.warranty}-day warranty`, "Open 24 hours, 7 days"].map((t) => (
+                <li key={t} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 shrink-0 text-aqua" aria-hidden strokeWidth={3} />
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-9 hidden gap-3 sm:flex">
+              <Link href="/book" className="rounded-full bg-aqua px-7 py-4 text-center text-lg font-bold text-ink hover:bg-white">
+                Book a repair
+              </Link>
+              <a href={telHref} className="flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-lg font-semibold tnum hover:bg-white/10">
+                <Phone className="h-5 w-5" aria-hidden /> Call {SITE.phone}
+              </a>
             </div>
           </div>
+          <PriceFinder compact />
+        </Container>
+      </section>
 
-          <div className="pt-8 border-t border-slate-800 text-center text-[10px] uppercase tracking-widest text-slate-500">
-            <p>© {new Date().getFullYear()} Phone Time Phone Repair. All Rights Reserved.</p>
+      {/* How it works, beside a real photo from the repair mat */}
+      <section className="py-20 sm:py-28">
+        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+          <div className="relative">
+            <img
+              src="/work/technician-at-work.webp"
+              srcSet="/work/technician-at-work-sm.webp 640w, /work/technician-at-work.webp 1200w"
+              sizes="(min-width: 1024px) 540px, 100vw"
+              alt="Phone Time technician replacing parts inside an iPhone on a teal repair mat"
+              className="aspect-square w-full rounded-[32px] object-cover"
+              loading="lazy"
+            />
+            <p className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/95 px-4 py-3 text-[15px] shadow-lg backdrop-blur sm:right-auto">
+              <b>A full repair setup, on your table.</b> Tools, mat and parts come with me.
+            </p>
           </div>
-        </div>
-      </footer>
-    </div>
-  )
-}
-
-// 辅助组件保持不变
-function CategoryCard({ image, title, link, isHighlight = false }: { image: string, title: string, link: string, isHighlight?: boolean }) {
-  return (
-    <Link href={link} target="_blank" className="group block">
-      <div className="bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 border-2 border-transparent group-hover:border-teal-500 text-center">
-        <div className="relative aspect-square md:aspect-[4/3] overflow-hidden">
-          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-        </div>
-        <div className="p-6">
-          <h3 className={`text-xl font-bold mb-2 ${isHighlight ? 'text-teal-600' : 'text-slate-800'}`}>{title}</h3>
-          <div className="flex items-center justify-center text-teal-500 font-medium group-hover:underline text-sm uppercase">
-            Shop Now <ArrowRightIcon className="ml-2 h-4 w-4" />
+          <div>
+            <SectionHead title="How it works" intro="No dropping your phone off and waiting days. The repair happens where you are." />
+            <ol className="mt-10 space-y-8">
+              {STEPS.map((s, i) => (
+                <li key={s.t} className="grid grid-cols-[48px_1fr] gap-4">
+                  <span className="grid h-12 w-12 place-items-center rounded-full bg-ink text-lg font-bold text-aqua tnum">{i + 1}</span>
+                  <div>
+                    <h3 className="text-xl font-bold">{s.t}</h3>
+                    <p className="mt-1 leading-relaxed text-muted2">{s.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
-        </div>
-      </div>
-    </Link>
-  )
-}
+        </Container>
+      </section>
 
-function ServiceCard({ icon, title, description }: { icon: any, title: string, description: string }) {
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border">
-      <div className="text-teal-500 mb-4 flex justify-center">{icon}</div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-slate-600 text-sm">{description}</p>
-    </div>
-  )
-}
+      {/* Popular repairs with real starting prices from the price list */}
+      <section className="border-y border-line bg-white py-20 sm:py-24">
+        <Container>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHead title="Popular repairs" intro={`Prices for ${ms.length} models across ${brands.map((b) => b.n).join(", ")}.`} />
+            <Link href="/prices" className="shrink-0 font-semibold text-teal-700 underline underline-offset-4">See every price</Link>
+          </div>
+          <ul className="mt-10 grid gap-x-12 sm:grid-cols-2">
+            {popular.map(({ f, from }) => (
+              <li key={f} className="flex items-baseline gap-4 border-t border-line py-6">
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold">{FAULT_INFO[f].name}</h3>
+                  <p className="mt-1 text-muted2">{FAULT_INFO[f].blurb}</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-muted2">from</div>
+                  <div className="text-2xl font-extrabold tnum">{money(from!)}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
-function FeatureCard({ number, title, description }: { number: string, title: string, description: string }) {
-  return (
-    <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-      <div className="bg-teal-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-6 mx-auto">{number}</div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-slate-600 text-sm">{description}</p>
-    </div>
+      {/* Real before / after work */}
+      <section className="py-20 sm:py-28">
+        <Container>
+          <SectionHead title="Recent repairs" intro="Photos from real jobs around the eastern suburbs." />
+          <div className="mt-10">
+            <Gallery />
+          </div>
+        </Container>
+      </section>
+
+      <section className="pb-20 sm:pb-28">
+        <Container>
+          <ReviewsBand />
+        </Container>
+      </section>
+
+      {/* Why choose: plain facts, two columns */}
+      <section className="border-t border-line bg-white py-20 sm:py-24">
+        <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+          <SectionHead title="Why locals choose Phone Time" />
+          <dl className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            {[
+              ["It comes to you", "Home, work or the café down the road. No travel fee and no waiting in a shop."],
+              ["You choose the part", "Genuine or good-value options with the price shown upfront, so the choice is yours."],
+              [`${SITE.warranty}-day warranty`, "Covers the part and the labour. If something isn't right, I fix it free."],
+              ["One person, start to finish", "The person you book with is the person who repairs your phone."],
+            ].map(([t, d]) => (
+              <div key={t} className="border-l-2 border-teal-400 pl-5">
+                <dt className="text-lg font-bold">{t}</dt>
+                <dd className="mt-1.5 leading-relaxed text-muted2">{d}</dd>
+              </div>
+            ))}
+          </dl>
+        </Container>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <Container>
+          <SectionHead title="Areas I cover" intro="Based in Kilsyth and travelling across Melbourne's east every day." />
+          <div className="mt-8">
+            <AreaLinks limit={20} />
+          </div>
+          <Link href="/areas" className="mt-6 inline-block font-semibold text-teal-700 underline underline-offset-4">All suburbs</Link>
+        </Container>
+      </section>
+
+      <section className="border-t border-line bg-white py-20 sm:py-24">
+        <Container className="grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+          <SectionHead title="Questions" intro="Can't see yours? Call or message any time." />
+          <Faq />
+        </Container>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <Container>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHead title="Cases, chargers and more" intro="Grab a case or a spare cable with your repair, or order from the online shop." />
+            <a href={SITE.shop} target="_blank" rel="noopener" className="shrink-0 font-semibold text-teal-700 underline underline-offset-4">Visit the shop</a>
+          </div>
+          <div className="-mx-4 mt-10 flex snap-x gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-5 sm:px-0">
+            {SHOP.map((s) => (
+              <a key={s.t} href={s.href} target="_blank" rel="noopener" className="group w-[42%] shrink-0 snap-start sm:w-auto">
+                <div className="aspect-square overflow-hidden rounded-3xl bg-white ring-1 ring-line">
+                  <img src={s.img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="mt-3 font-semibold">{s.t}</div>
+              </a>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CtaBand />
+    </>
   )
 }

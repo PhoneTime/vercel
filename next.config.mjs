@@ -27,8 +27,13 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  devIndicators: {
-    allowedDevOrigins: ['http://127.0.0.1', 'http://172.0.0.1'], // 在这里添加你的本地IP地址
+  async redirects() {
+    return [
+      { source: '/price-check', destination: '/prices', permanent: true },
+      { source: '/appointment', destination: '/book', permanent: true },
+      { source: '/quote/:path*', destination: '/prices', permanent: true },
+      { source: '/accessories', destination: 'https://shop.phonetime.com.au/shop/category/accessories-8', permanent: false },
+    ]
   },
 }
 

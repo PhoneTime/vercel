@@ -20,6 +20,13 @@ const config = {
     },
     extend: {
       colors: {
+        ink: "#062b2a",
+        teal: { DEFAULT: "#00978f", 50: "#effaf8", 100: "#d4f3ef", 200: "#a9e7e0", 300: "#6fd6cd", 400: "#2fc1b7", 500: "#00a89f", 600: "#00978f", 700: "#007a74", 800: "#05605c", 900: "#084f4c" },
+        aqua: "#19e3d8",
+        mat: "#e6f4f2",
+        paper: "#f7faf9",
+        line: "#d5e4e1",
+        muted2: "#4f6664",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -54,6 +61,7 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: { sans: ["var(--font-sans)", "system-ui", "sans-serif"] },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

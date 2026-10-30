@@ -1,104 +1,76 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
+import { Menu, X, Phone } from "lucide-react"
+import { SITE, telHref } from "@/lib/site"
+
+const NAV = [
+  { name: "Prices", href: "/prices" },
+  { name: "Areas", href: "/areas" },
+  { name: "Contact", href: "/contact" },
+]
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
-  }
-
-  // 按照你的要求重新排列了链接的顺序
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Get a Quote", href: "/price-check" },
-    { name: "Repair Now", href: "/appointment" },
-    { name: "Contact", href: "/contact" },
-  ]
+  const [open, setOpen] = useState(false)
+  const path = usePathname()
+  useEffect(() => setOpen(false), [path])
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        {/* Logo and Brand Name */}
-        <Link href="/" className="flex items-center space-x-2">
-          {/* Logo Image */}
-          <img src="/images/phonetime-logo.png" alt="PhoneTime Logo" className="h-12" />
-
-          {/* Brand Name */}
-          <div className="text-left">
-            <span className="text-2xl font-bold text-teal-600">PhoneTime</span>
-            <br />
-            <span className="text-lg font-medium text-teal-600">Phone Repair</span>
-          </div>
+    <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/75">
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4 sm:px-6">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Phone Time home">
+          <img src="/logo-256.png" alt="" width={36} height={40} className="h-10 w-auto" />
+          <span className="leading-none">
+            <span className="block text-[19px] font-extrabold tracking-tight text-ink">Phone Time</span>
+            <span className="block text-[12px] font-medium text-teal-700">Mobile phone repair</span>
+          </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
-          {/* 循环渲染的内部链接 */}
-          {navLinks.map((link) => (
+        <nav className="ml-auto hidden items-center gap-1 md:flex" aria-label="Main">
+          {NAV.map((l) => (
             <Link
-              key={link.name}
-              href={link.href}
-              className="text-gray-700 hover:text-teal-600 transition"
+              key={l.href}
+              href={l.href}
+              className={`rounded-full px-3.5 py-2 text-[15px] font-medium transition-colors hover:bg-mat ${path.startsWith(l.href) ? "text-teal-700" : "text-ink/80"}`}
             >
-              {link.name}
+              {l.name}
             </Link>
           ))}
-          {/* Accessories 链接依然独立存在，放在 Home 之后 */}
-          <a
-            href="https://shop.phonetime.com.au"
-            className="text-gray-700 hover:text-teal-600 transition"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Store
+          <a href={SITE.shop} target="_blank" rel="noopener" className="rounded-full px-3.5 py-2 text-[15px] font-medium text-ink/80 hover:bg-mat">
+            Accessories
           </a>
+          <a href={telHref} className="ml-2 flex items-center gap-2 px-2 text-[15px] font-semibold text-ink tnum">
+            <Phone className="h-4 w-4 text-teal-600" aria-hidden />
+            {SITE.phone}
+          </a>
+          <Link href="/book" className="ml-2 rounded-full bg-ink px-5 py-2.5 text-[15px] font-semibold text-white hover:bg-teal-800">
+            Book a repair
+          </Link>
         </nav>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} aria-label="Toggle Menu">
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        <button
+          className="ml-auto -mr-2 rounded-full p-2 text-ink md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-label={open ? "Close menu" : "Open menu"}
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
-      {/* Mobile Menu Drawer */}
-      {menuOpen && (
-        <div className="md:hidden bg-white px-4 py-4 shadow-md">
-          <nav className="space-y-2">
-            {/* Mobile端导航栏也相应调整了顺序 */}
-            <Link
-              href="/"
-              className="block text-gray-700 hover:text-teal-600 transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              Home
+      {open && (
+        <nav className="border-t border-line bg-paper px-4 pb-5 pt-2 md:hidden" aria-label="Mobile">
+          {[...NAV, { name: "Book a repair", href: "/book" }].map((l) => (
+            <Link key={l.href} href={l.href} className="block border-b border-line/70 py-3.5 text-lg font-semibold text-ink">
+              {l.name}
             </Link>
-            <a
-              href="https://shop.phonetime.com.au"
-              className="block text-gray-700 hover:text-teal-600 transition"
-              onClick={() => setMenuOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Store
-            </a>
-            {navLinks.slice(1).map((link) => ( // 从第二个链接开始循环，Home已单独处理
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block text-gray-700 hover:text-teal-600 transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
+          ))}
+          <a href={SITE.shop} target="_blank" rel="noopener" className="block py-3.5 text-lg font-semibold text-ink">
+            Accessories shop
+          </a>
+        </nav>
       )}
     </header>
   )
