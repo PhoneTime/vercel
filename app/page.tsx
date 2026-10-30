@@ -96,7 +96,7 @@ export default function Home() {
       <section className="border-y border-line bg-white py-20 sm:py-24">
         <Container>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHead title="Popular repairs" intro={`Prices for ${ms.length} models across ${brands.map((b) => b.n).join(", ")}.`} />
+            <SectionHead title="Popular repairs" intro={`Repairs for ${ms.length} models across ${brands.map((b) => b.n).join(", ")}.`} />
             <Link href="/prices" className="shrink-0 font-semibold text-teal-700 underline underline-offset-4">See every price</Link>
           </div>
           <ul className="mt-10 grid gap-x-12 sm:grid-cols-2">
