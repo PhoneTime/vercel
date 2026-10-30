@@ -63,7 +63,7 @@ export default function BookingForm() {
   const qs = sp.toString()
   useEffect(() => {
     const sp = new URLSearchParams(qs)
-    if (sp.get("mode") === "quote") setMode("quote")
+    setMode(sp.get("mode") === "quote" ? "quote" : "book")
     const m = sp.get("model")
     if (!m) return
     const b = brands.find((x) => x.g.some((g) => g.ms.includes(m)))
