@@ -1,42 +1,66 @@
 import "./globals.css"
-import { Inter } from "next/font/google"
+import type { Metadata, Viewport } from "next"
 import type { ReactNode } from "react"
+import { Schibsted_Grotesk } from "next/font/google"
+import Script from "next/script"
 import Providers from "@/app/providers"
-import Header from "../components/Header"
-import Script from "next/script" 
-import Link from "next/link"
-import { MessageCircleIcon, PhoneCallIcon } from "lucide-react"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import MobileBar from "@/components/MobileBar"
+import { SITE, AREAS } from "@/lib/site"
 
-const inter = Inter({ subsets: ["latin"] })
+const sans = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
 
-export const metadata = {
-  title: "Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs", 
-  description: "Phone Time provides professional, affordable on-site phone repair services in Kilsyth and surrounding Melbourne Eastern suburbs. We use the best quality parts to fix your screen or battery at your door.",
-  keywords: "Phone Repair Kilsyth, On-site Phone Repair Melbourne, Mobile Phone Repair Kilsyth, Cheap iPhone Repair, Phone Time Repair",
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: "Phone Time | On-site Phone Repair in Kilsyth & Melbourne's East",
+    template: "%s | Phone Time",
+  },
+  description:
+    "Mobile phone repair that comes to you. Screens, batteries, charging ports and back glass for iPhone, Samsung, Google Pixel and iPad, fixed at your home or work across Kilsyth and Melbourne's eastern suburbs.",
+  keywords: ["phone repair Kilsyth", "mobile phone repair near me", "iPhone screen repair Melbourne east", "on-site phone repair", "Samsung screen repair Croydon", "Phone Time"],
   openGraph: {
-    title: "Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs",
-    description: "Affordable on-site phone repair services in Kilsyth and Eastern Suburbs.",
     type: "website",
-    url: "https://phonetime.com.au",
+    siteName: "Phone Time",
+    locale: "en_AU",
+    url: SITE.url,
+    images: [{ url: "/work/technician-at-work.webp", width: 1200, height: 1187, alt: "Phone Time technician repairing an iPhone on a repair mat" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Phone Time | On-site Phone Repair Kilsyth & Eastern Suburbs",
-    description: "Professional mobile phone repair at your door in Kilsyth.",
-  },
-  generator: 'v0.dev',
+  twitter: { card: "summary_large_image" },
+  icons: { icon: "/logo-256.png" },
+}
+
+export const viewport: Viewport = { themeColor: "#062b2a", width: "device-width", initialScale: 1 }
+
+/* Service-area business: no street address shown, areas listed instead */
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "MobilePhoneStore",
+  "@id": SITE.url + "/#business",
+  name: SITE.name,
+  url: SITE.url,
+  telephone: "+61" + SITE.phone.replace(/\D/g, "").replace(/^0/, ""),
+  email: SITE.email,
+  image: SITE.url + "/work/technician-at-work.webp",
+  logo: SITE.url + "/logo-256.png",
+  priceRange: "$$",
+  address: { "@type": "PostalAddress", addressLocality: "Kilsyth", addressRegion: "VIC", postalCode: "3137", addressCountry: "AU" },
+  areaServed: AREAS.map((a) => ({ "@type": "Place", name: a + " VIC" })),
+  openingHoursSpecification: [{
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59",
+  }],
+  sameAs: [SITE.google, SITE.shop],
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="light" style={{ colorScheme: "light" }}>
+    <html lang="en-AU" className={`light ${sans.variable}`} style={{ colorScheme: "light" }}>
       <head>
-        {/* Google Tag (gtag.js) 基础脚本 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17522228043"
-          strategy="afterInteractive"
-        />
-        {/* 配置 Google Ads 和 Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-17522228043" strategy="afterInteractive" />
         <Script id="google-tags" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -46,38 +70,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             gtag('config', 'G-94D6CCRGY8');
           `}
         </Script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
       </head>
-      <body className={inter.className}>
+      <body className="font-sans">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white">
+          Skip to content
+        </a>
         <Providers>
           <Header />
-          <main>{children}</main>
+          <main id="main">{children}</main>
+          <Footer />
+          <MobileBar />
         </Providers>
-
-        {/* --- 全站通用：右下角悬浮按钮组 (WhatsApp & Call) --- */}
-        <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-3">
-          {/* WhatsApp 按钮 - 绿色 */}
-          <Link 
-            href="https://wa.me/61468897890" 
-            target="_blank"
-            className="bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-          >
-            <MessageCircleIcon className="h-6 w-6" />
-            <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
-              WhatsApp
-            </span>
-          </Link>
-
-          {/* 拨号按钮 - 蓝色/原色 */}
-          <Link 
-            href="tel:0468897890"
-            className="bg-teal-500 hover:bg-teal-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-          >
-            <PhoneCallIcon className="h-6 w-6" />
-            <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap font-bold">
-              Call Now
-            </span>
-          </Link>
-        </div>
       </body>
     </html>
   )

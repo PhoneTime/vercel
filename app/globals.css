@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+/* Phone Time tokens */
+:root {
+  --ink: #062b2a;      /* deep teal ink: text and dark sections */
+  --teal: #00978f;     /* logo teal: links, accents */
+  --aqua: #19e3d8;     /* logo highlight: primary buttons on dark */
+  --mat: #e6f4f2;      /* repair-mat tint: soft panels */
+  --paper: #f7faf9;    /* page background */
+  --line: #d5e4e1;
+  --muted: #4f6664;
 }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body { background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 6px; }
+.tnum { font-variant-numeric: tabular-nums; }
 
 @layer utilities {
   .text-balance {
