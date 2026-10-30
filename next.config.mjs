@@ -29,6 +29,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/sitemap-0.xml', destination: '/sitemap.xml', permanent: true },
       { source: '/price-check', destination: '/prices', permanent: true },
       { source: '/appointment', destination: '/book', permanent: true },
       { source: '/quote/:path*', destination: '/prices', permanent: true },
