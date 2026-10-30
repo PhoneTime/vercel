@@ -8,6 +8,7 @@ import { SITE, telHref } from "@/lib/site"
 
 const NAV = [
   { name: "Prices", href: "/prices" },
+  { name: "Guides", href: "/guides" },
   { name: "Areas", href: "/areas" },
   { name: "Contact", href: "/contact" },
 ]
