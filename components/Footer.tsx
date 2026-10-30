@@ -23,6 +23,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5">
             <li><Link href="/prices" className="hover:text-white">All repair prices</Link></li>
             <li><Link href="/book" className="hover:text-white">Book a repair</Link></li>
+            <li><Link href="/guides" className="hover:text-white">Repair guides</Link></li>
             <li><a href={waHref("Hi Phone Time, I'd like a quote")} target="_blank" rel="noopener" className="hover:text-white">Ask on WhatsApp</a></li>
             <li><a href={SITE.google} target="_blank" rel="noopener" className="hover:text-white">Google reviews</a></li>
             <li><a href={SITE.shop} target="_blank" rel="noopener" className="hover:text-white">Accessories shop</a></li>
