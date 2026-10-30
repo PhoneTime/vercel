@@ -54,6 +54,77 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "iphone-unknown-part-message-explained",
+    title: "Why your iPhone says “Unknown Part” after a repair",
+    description: "What the Unknown Part message means after a screen, battery or camera replacement, why Apple shows it, whether it affects your phone, and your options.",
+    date: "2026-10-30",
+    read: "5 min read",
+    Body: () => (
+      <>
+        <p>
+          After a screen, battery or camera replacement, some iPhones show a message such as “Unable to verify this iPhone has a genuine Apple display” or list the part as <b>Unknown Part</b> in Settings. It can look worrying, so here is what is actually going on, explained as objectively as I can.
+        </p>
+
+        <h2>Why the message appears</h2>
+        <p>
+          Apple gives many iPhone parts their own serial number and links them to the phone&apos;s main board. When Apple, or a repairer using Apple&apos;s own system, fits a new genuine part, the part is registered to that specific phone.
+        </p>
+        <p>When the phone can&apos;t confirm that link, it labels the part as Unknown. According to Apple, that happens when the replacement part:</p>
+        <ul>
+          <li>isn&apos;t a genuine Apple part,</li>
+          <li>hasn&apos;t been verified and linked to the phone after the repair,</li>
+          <li>has been modified or can&apos;t be verified, or</li>
+          <li>isn&apos;t working as expected.</li>
+        </ul>
+        <p>So the message is about the part&apos;s origin and registration, not a sign that the repair was done badly. Even a genuine Apple part taken from another iPhone can show it if it hasn&apos;t been linked to your phone.</p>
+
+        <h2>Which iPhones and parts show it</h2>
+        <ul>
+          <li><b>Battery:</b> iPhone XR, XS, XS Max, SE (2nd and 3rd gen) and later.</li>
+          <li><b>Display:</b> iPhone 11 and later.</li>
+          <li><b>Front and rear cameras:</b> iPhone 12 and later.</li>
+        </ul>
+        <p>On iOS 15.2 and later you can see the history in <b>Settings → General → About → Parts and Service History</b>.</p>
+
+        <h2>When you&apos;ll see it</h2>
+        <p>
+          Apple shows a notification the first time you unlock the iPhone after the repair, and again about five days later. So in practice, most people see it once or twice in the first week, often after restarting the phone. After that it stays quietly in Settings and doesn&apos;t keep popping up.
+        </p>
+
+        <h2>Does it affect the phone?</h2>
+        <p>The message itself doesn&apos;t stop anything working. Calls, apps, the camera, touch and charging all work as normal. To be fully transparent, a few extras can depend on the part and how it&apos;s fitted:</p>
+        <ul>
+          <li><b>Battery Health percentage</b> may not show with a non-Apple battery.</li>
+          <li><b>True Tone and auto-brightness</b> can be affected with some replacement screens.</li>
+          <li><b>Trade-in value</b> may be lower, as Apple notes Unknown parts can reduce it.</li>
+        </ul>
+        <p>Before the repair I&apos;ll tell you which of these applies to your model and the part you choose, so there are no surprises.</p>
+
+        <h2>Can the message be avoided?</h2>
+        <p>
+          Sometimes, yes. For some models and parts there are options that don&apos;t show the message, for example batteries fitted with the original battery&apos;s chip transferred across, or replacement parts made to keep Battery Health and True Tone working. These usually cost a bit more and aren&apos;t available for every model or part. Ask me when you book and I&apos;ll tell you what&apos;s possible for your phone.
+        </p>
+
+        <h2>If it really matters to you</h2>
+        <p>
+          If you want every part to show as Genuine, an Apple Store or Apple Authorised Service Provider is the right choice. They fit genuine parts and register them to your phone. It usually costs more and often means booking ahead or leaving the phone with them, but the part history will show Genuine. Newer iPhones (12 and later, on iOS 18) also have a Repair Assistant that can register genuine Apple parts.
+        </p>
+        <p>
+          For most people, a quality replacement fitted at home the same day, with a {SITE.warranty}-day warranty, is the better value. It&apos;s your choice, and I&apos;m happy to help you weigh it up.
+        </p>
+
+        <h2>In short</h2>
+        <ul>
+          <li>“Unknown Part” means the phone can&apos;t verify the part as a registered genuine Apple part.</li>
+          <li>It usually appears after unlocking, once or twice in the first week, then stays in Settings.</li>
+          <li>Your phone works normally. Some extras may depend on the part, and I&apos;ll explain before the repair.</li>
+          <li>Options without the message exist for some models. Apple repair is the way to get Genuine on every part.</li>
+        </ul>
+        <p>Have a question about your model? <Link href="/contact">Get in touch</Link> or <Link href="/book">book a repair</Link> and add a note.</p>
+      </>
+    ),
+  },
+  {
     slug: "iphone-screen-repair-cost-melbourne",
     title: "How much does an iPhone screen repair cost in Melbourne?",
     description: "Real iPhone screen replacement prices by model, what changes the price, and how to choose between screen options.",
