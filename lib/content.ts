@@ -56,9 +56,23 @@ export const SHOP = [
 /* Google rating: update the count now and then (or ask Claude to). */
 export const GOOGLE = { rating: 5.0, count: 48 }
 
-/* Short excerpts from real Google reviews, first name and initial only. */
+/* Real Google reviews, word for word (long ones cut at a full stop), first name and initial only. */
 export const REVIEWS = [
   { name: "Maria R.", text: "Utterly exceptional, friendly and came to me on a SUNDAY night!!! The repair was so quick (I am very impressed with the professional setup he brought with him)." },
-  { name: "Tilly E.", text: "I cannot say enough good things about the service kindness and special care they gave me." },
+  { name: "Darren V.", text: "Great service! Called on a Saturday night and he arrived within half an hour and fixed it very quickly. Cannot recommend any higher!" },
+  { name: "Jenni L.", text: "Very friendly and efficient. My iphone 11 screen replacement was done in 15mins. Would use this company again in the future. Thank you :)!" },
+  { name: "Wyatt W.", text: "Fantastic, was here within 15 mins, and fixed the phone in about 10 mins.. Highly recommend" },
+  { name: "Rachael E.", text: "Absolutely amazing service. I am so happy, I completely smashed my whole screen while at work and they were able to come to my work to fix my phone. So so well priced." },
+  { name: "Jayden C.", text: "Amazing service and my phone is fully fixed now. He came straight away as soon as we called. 10/10 recommend!" },
+  { name: "Mark S.", text: "Henry turned up on time and efficiently restored my son's damaged phone and assisted the family in sovling long standing issues with the other phones." },
+  { name: "Nathan C.", text: "I was very pleased with his service, prompt and efficient. Incredibly impressed with how quick and professional the repair was done." },
+  { name: "Anthony K.", text: "Excellent and prompt service. Very reasonable prices. Highly recommended." },
   { name: "Claude V.", text: "The best job I've ever had done with my mobile." },
+  { name: "Tilly E.", text: "I cannot say enough good things about the service kindness and special care they gave me." },
+  { name: "Christine W.", text: "Wonderful service and support. I will be used again. Very happy with service." },
+  { name: "Flynn", text: "very good service, called him out late at night, stayed for a few hours trying to fix my phone. gave me all the details. i needed. very good" },
+  { name: "Peter H.", text: "Fantastic and fine attention to detail. Very professional" },
+  { name: "Jake D.", text: "Great service, quick and easy and go to your house which is good" },
+  { name: "Charlie D.", text: "I'm very happy from phonetime services. Come to my door easy and relax." },
+  { name: "Vladimir O.", text: "Extremly fast helpful and convenient!" },
 ]
