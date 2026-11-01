@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Check } from "lucide-react"
 import PriceFinder from "@/components/PriceFinder"
+import { ipText } from "@/lib/ipad"
 import { Container, CtaBand } from "@/components/Blocks"
 import { brands, prices, faultsFor, fromPrice, money, slug, SITE } from "@/lib/site"
 
@@ -62,6 +63,7 @@ export default function PricesPage() {
                           <tr key={m} className="border-t border-line/70 hover:bg-mat/50">
                             <th scope="row" className="px-5 py-3 font-semibold">
                               <Link href={`/repair/${slug(m)}`} className="hover:text-teal-700 hover:underline">{m}</Link>
+                              {ipText(m) && <span className="block text-xs font-normal text-muted2 [font-variant-numeric:normal]">{ipText(m)}</span>}
                             </th>
                             {COLS.map((c) => {
                               const v = fromPrice(prices[m]?.[c])

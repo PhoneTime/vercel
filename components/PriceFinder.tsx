@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useMemo, useState } from "react"
 import { ChevronDown } from "lucide-react"
+import { ipInfo } from "@/lib/ipad"
 import { brands, prices, faultsFor, FAULT_INFO, money, slug } from "@/lib/site"
 
 export default function PriceFinder({ initialModel = "", compact = false }: { initialModel?: string; compact?: boolean }) {
@@ -50,10 +51,10 @@ export default function PriceFinder({ initialModel = "", compact = false }: { in
         {b.g.map((g) =>
           b.g.length > 1 ? (
             <optgroup key={g.l} label={g.l}>
-              {g.ms.map((m) => <option key={m}>{m}</option>)}
+              {g.ms.map((m) => <option key={m} value={m}>{m}{ipInfo(m) ? ` (${ipInfo(m)![0]})` : ""}</option>)}
             </optgroup>
           ) : (
-            g.ms.map((m) => <option key={m}>{m}</option>)
+            g.ms.map((m) => <option key={m} value={m}>{m}{ipInfo(m) ? ` (${ipInfo(m)![0]})` : ""}</option>)
           ),
         )}
       </select>
