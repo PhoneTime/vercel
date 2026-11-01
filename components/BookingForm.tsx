@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
 import { Check, ChevronDown, Search, MessageCircle, Phone, Loader2 } from "lucide-react"
+import { ipInfo, ipText, modelMatch } from "@/lib/ipad"
 import { brands, prices, FAULT_INFO, FAULT_ORDER, money, SITE, telHref, waHref } from "@/lib/site"
 
 /* The booking request carries a [PTB:...] code that the Phone Time repair app reads
@@ -96,9 +97,8 @@ export default function BookingForm() {
   const faultList = [...FAULT_ORDER.filter((f) => f !== "Other" && (p[f] || f === "Screen" || f === "Battery" || f === "Charging port" || f === "Back glass")), ...Object.keys(p).filter((f) => !FAULT_ORDER.includes(f)), NOT_SURE]
 
   const hits = useMemo(() => {
-    const s = q.trim().toLowerCase().replace(/\s+/g, "")
-    if (!b || !s) return []
-    return b.g.flatMap((g) => g.ms).filter((m) => m.toLowerCase().replace(/\s+/g, "").includes(s)).slice(0, 12)
+    if (!b || !q.trim()) return []
+    return b.g.flatMap((g) => g.ms).filter((m) => modelMatch(m, q)).slice(0, 12)
   }, [q, b])
 
   const lines = Object.keys(sel).map((f) => {
@@ -238,13 +238,13 @@ export default function BookingForm() {
               <label className="relative block">
                 <span className="sr-only">Search your model</span>
                 <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted2" aria-hidden />
-                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search, e.g. 15 Pro" className={inputCls + " pl-12"} autoComplete="off" />
+                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={b.n.includes("iPad") ? "Search, e.g. Air 13 or A2602" : "Search, e.g. 15 Pro"} className={inputCls + " pl-12"} autoComplete="off" />
               </label>
               {q.trim() ? (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {hits.length === 0 && <p className="text-muted2">No match. Try fewer words, or pick “{OTHER}”.</p>}
                   {hits.map((m) => (
-                    <button key={m} type="button" onClick={() => { setModel(m); setSel({}); setQ("") }} className="rounded-full border border-line bg-white px-4 py-2 font-medium hover:border-teal-500">{m}</button>
+                    <button key={m} type="button" onClick={() => { setModel(m); setSel({}); setQ("") }} className="rounded-2xl border border-line bg-white px-4 py-2 font-medium hover:border-teal-500 text-left">{m}{ipText(m) && <span className="block text-xs font-normal text-muted2">{ipText(m)}</span>}</button>
                   ))}
                 </div>
               ) : (
@@ -259,13 +259,13 @@ export default function BookingForm() {
                   <option value="">Choose your model</option>
                   {b.g.map((g) => (
                     <optgroup key={g.l} label={g.l}>
-                      {g.ms.map((m) => <option key={m}>{m}</option>)}
+                      {g.ms.map((m) => <option key={m} value={m}>{m}{ipInfo(m) ? ` (${ipInfo(m)![0]})` : ""}</option>)}
                     </optgroup>
                   ))}
                 </select>
                 </div>
               )}
-              {model && <p className="mt-3 flex items-center gap-2 font-semibold text-teal-800"><Check className="h-4 w-4" strokeWidth={3} aria-hidden /> {model}</p>}
+              {model && <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-0.5 font-semibold text-teal-800"><Check className="h-4 w-4" strokeWidth={3} aria-hidden /> {model}{ipText(model) && <span className="font-normal text-muted2">· {ipText(model)}</span>}</p>}
             </div>
           )}
           {brand === OTHER && (

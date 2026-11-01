@@ -4,6 +4,7 @@ import { Check } from "lucide-react"
 import { Container, Faq, faqJsonLd, CtaBand, ReviewsBand } from "@/components/Blocks"
 import { allModels, modelBySlug, prices, faultsFor, FAULT_INFO, money, slug, SITE } from "@/lib/site"
 import { FAQ } from "@/lib/content"
+import { ipInfo } from "@/lib/ipad"
 
 type P = { params: Promise<{ slug: string }> }
 
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: P) {
   const from = scr ? " from " + money(Math.min(...scr.map((o) => +o.p))) : ""
   return {
     title: `${m.model} Repair – Screen${from}, Battery & More`,
-    description: `${m.model} ${fs.length ? fs.map((f) => FAULT_INFO[f]?.name.toLowerCase() || f).slice(0, 3).join(", ") : "repairs"} at your home or work in ${SITE.area}. Upfront prices, no travel fee, ${SITE.warranty}-day warranty.`,
+    description: `${m.model}${ipInfo(m.model) ? ` (${ipInfo(m.model)![1].join(", ")})` : ""} ${fs.length ? fs.map((f) => FAULT_INFO[f]?.name.toLowerCase() || f).slice(0, 3).join(", ") : "repairs"} at your home or work in ${SITE.area}. Upfront prices, no travel fee, ${SITE.warranty}-day warranty.`,
     alternates: { canonical: `/repair/${slug(m.model)}` },
   }
 }
@@ -53,6 +54,9 @@ export default async function RepairPage({ params }: P) {
             <Link href="/prices" className="hover:text-white">Prices</Link> <span aria-hidden>/</span> {m.brand} <span aria-hidden>/</span> <span className="text-white/90">{m.model}</span>
           </nav>
           <h1 className="mt-4 text-[38px] font-extrabold leading-[1.02] tracking-[-0.03em] sm:text-[56px]">{m.model} repair</h1>
+          {ipInfo(m.model) && (
+            <p className="mt-3 text-white/70">Released {ipInfo(m.model)![0]} · Model number {ipInfo(m.model)![1].join(", ")}</p>
+          )}
           <p className="mt-4 max-w-xl text-lg text-white/75">Fixed at your home or work, most repairs the same day. Prices include coming to you.</p>
           <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-white/90">
             {["No travel fee", `${SITE.warranty}-day warranty`, "Pay when it's done"].map((t) => (
