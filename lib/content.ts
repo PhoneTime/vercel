@@ -43,6 +43,22 @@ export const FAQ = [
     q: "How can I pay?",
     a: "Cash, card or bank transfer once the repair is done and you're happy with it.",
   },
+  {
+    q: "Do I need to pay a deposit?",
+    a: "Most repairs need no deposit. For some models or parts that have to be ordered in especially for you, I may ask for a deposit (usually the cost of the part) before ordering. I'll always tell you first, and it comes off your final bill. If you cancel before the part is ordered, you get it all back. If you cancel after it's ordered, the deposit covers the part; if the supplier takes it back, I refund the deposit less any return fees.",
+  },
+]
+
+/* Deposit and cancellation policy, shown on the booking page */
+export const DEPOSIT_POLICY = [
+  "Most repairs need no deposit. You pay once it's fixed.",
+  "Some models or parts aren't kept in stock and are ordered in especially for you. For these I may ask for a deposit, usually the cost of the part, before ordering. I'll always tell you first, and nothing is ordered until you agree.",
+  "The deposit comes off your final bill.",
+  "Need a different time? No charge. Just let me know as early as you can.",
+  "Cancel before the part is ordered: your deposit is refunded in full.",
+  "Cancel after the part is ordered: the deposit covers the part and isn't refunded. If the supplier accepts the part back, I'll refund your deposit less any return or postage fees.",
+  "If I can't complete the repair (for example the part doesn't fit or arrives faulty), your deposit is refunded in full.",
+  "None of this affects your rights under the Australian Consumer Law.",
 ]
 
 export const SHOP = [
