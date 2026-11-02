@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import BookingForm from "@/components/BookingForm"
 import { Container } from "@/components/Blocks"
 import { SITE } from "@/lib/site"
+import { DEPOSIT_POLICY } from "@/lib/content"
 
 export const metadata = {
   title: "Book a Phone Repair or Get a Quote – I Come to You",
@@ -22,6 +23,16 @@ export default function BookPage() {
         <Suspense fallback={<div className="h-96 rounded-[28px] bg-white" />}>
           <BookingForm />
         </Suspense>
+      </Container>
+      <Container>
+        <section id="deposits" className="mt-14 scroll-mt-24 rounded-[28px] border border-line bg-white p-6 sm:p-8">
+          <h2 className="text-2xl font-extrabold tracking-tight">Deposits &amp; cancellations</h2>
+          <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-muted2">
+            {DEPOSIT_POLICY.map((t) => (
+              <li key={t} className="flex gap-3"><span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500" />{t}</li>
+            ))}
+          </ul>
+        </section>
       </Container>
     </div>
   )

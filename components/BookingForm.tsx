@@ -450,6 +450,7 @@ export default function BookingForm() {
           <span className="text-3xl font-extrabold tnum">{total ? money(total) : needsQuote ? "Quote" : "$0"}{total && needsQuote ? <span className="text-base font-semibold text-white/70"> + quote</span> : null}</span>
         </div>
         <p className="mt-2 text-sm text-white/60">{quote ? "Online prices include parts, labour and coming to you. I'll confirm the final price in your quote." : "Includes parts, labour and coming to you. Price confirmed before I start."}</p>
+        <p className="mt-2 text-sm text-white/60">No deposit for most repairs. If your part has to be ordered in, I may ask for one first. <a href="#deposits" className="font-semibold text-white underline underline-offset-2">Deposits &amp; cancellations</a></p>
 
         <button
           type="button"
