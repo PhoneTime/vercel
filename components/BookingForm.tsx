@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
 import { Check, ChevronDown, Search, MessageCircle, Phone, Loader2 } from "lucide-react"
-import { ipInfo, ipText, modelMatch } from "@/lib/ipad"
+import { ipOpt, ipText, modelMatch } from "@/lib/ipad"
 import { brands, prices, FAULT_INFO, FAULT_ORDER, money, SITE, telHref, waHref } from "@/lib/site"
 
 /* The booking request carries a [PTB:...] code that the Phone Time repair app reads
@@ -259,7 +259,7 @@ export default function BookingForm() {
                   <option value="">Choose your model</option>
                   {b.g.map((g) => (
                     <optgroup key={g.l} label={g.l}>
-                      {g.ms.map((m) => <option key={m} value={m}>{m}{ipInfo(m) ? ` (${ipInfo(m)![0]})` : ""}</option>)}
+                      {g.ms.map((m) => <option key={m} value={m}>{m}{ipOpt(m)}</option>)}
                     </optgroup>
                   ))}
                 </select>
