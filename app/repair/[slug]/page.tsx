@@ -55,7 +55,7 @@ export default async function RepairPage({ params }: P) {
           </nav>
           <h1 className="mt-4 text-[38px] font-extrabold leading-[1.02] tracking-[-0.03em] sm:text-[56px]">{m.model} repair</h1>
           {ipInfo(m.model) && (
-            <p className="mt-3 text-white/70">Released {ipInfo(m.model)![0]} · Model number {ipInfo(m.model)![1].join(", ")}</p>
+            <p className="mt-3 text-white/70">{ipInfo(m.model)![1][0]?.startsWith("SM-") ? <>Model number {ipInfo(m.model)![1].join(", ")} · Released {ipInfo(m.model)![0]}</> : <>Released {ipInfo(m.model)![0]} · Model number {ipInfo(m.model)![1].join(", ")}</>}</p>
           )}
           <p className="mt-4 max-w-xl text-lg text-white/75">Fixed at your home or work, most repairs the same day. Prices include coming to you.</p>
           <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-white/90">

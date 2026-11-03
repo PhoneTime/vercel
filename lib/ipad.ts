@@ -124,9 +124,17 @@ Object.assign(IPAD, {
 })
 
 export const ipInfo = (m: string) => IPAD[m] || null
+const isSM = (x: [number, string[]]) => x[1][0]?.startsWith("SM-")
 export const ipText = (m: string) => {
   const x = IPAD[m]
-  return x ? `${x[0]} · ${x[1].join(", ")}` : ""
+  if (!x) return ""
+  return isSM(x) ? `${x[1].join(", ")} · ${x[0]}` : `${x[0]} · ${x[1].join(", ")}`
+}
+/* Short label for dropdowns: Samsung shows the model number first, iPad just the year */
+export const ipOpt = (m: string) => {
+  const x = IPAD[m]
+  if (!x) return ""
+  return isSM(x) ? ` (${x[1][0]} · ${x[0]})` : ` (${x[0]})`
 }
 /* Match a model by name, release year or model number, e.g. "a2602" */
 export const modelMatch = (m: string, q: string) => {
