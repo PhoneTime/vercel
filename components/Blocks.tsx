@@ -23,14 +23,14 @@ export function Gallery() {
     <PanRow label="Recent repair photos" className="-mx-4 scroll-pl-4 px-4 pb-4 sm:-mx-6 sm:scroll-pl-6 sm:px-6">
       {GALLERY.map((g) => (
         <figure key={g.src} className="w-[78%] shrink-0 snap-start sm:w-[380px]">
-          <div className="aspect-[4/3.6] overflow-hidden rounded-3xl bg-ink/5">
+          <div className={`aspect-[4/3.6] overflow-hidden rounded-3xl ${"fit" in g && g.fit === "contain" ? "bg-[#070d1b]" : "bg-ink/5"}`}>
             <img
               src={`/work/${g.src}-sm.webp`}
               srcSet={`/work/${g.src}-sm.webp 640w, /work/${g.src}.webp 1200w`}
               sizes="(min-width: 640px) 380px, 78vw"
               alt={g.alt}
               loading="lazy"
-              className="h-full w-full object-cover"
+              className={`h-full w-full ${"fit" in g && g.fit === "contain" ? "object-contain" : "object-cover"}`}
             />
           </div>
           <figcaption className="mt-3 px-1">

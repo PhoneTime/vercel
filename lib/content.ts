@@ -1,6 +1,7 @@
 import { SITE } from "@/lib/site"
 
 export const GALLERY = [
+  { src: "iphone-14-pro-max-battery", alt: "iPhone 14 Pro Max battery health at 79% before, a genuine Apple battery confirmed by the iPhone, and 100% maximum capacity after", cap: "iPhone 14 Pro Max", fix: "Battery replacement · 79% to 100%", fit: "contain" },
   { src: "iphone-14-pro-screen", alt: "iPhone 14 Pro with a lined, faulty display, then working after a new screen", cap: "iPhone 14 Pro", fix: "Screen replacement" },
   { src: "iphone-12-pro-back-glass", alt: "iPhone 12 Pro with shattered back glass, then with new back glass", cap: "iPhone 12 Pro", fix: "Back glass replacement" },
   { src: "galaxy-s23-ultra-screen", alt: "Galaxy S23 Ultra with a dead display, then working after a new screen", cap: "Galaxy S23 Ultra", fix: "Screen replacement" },
