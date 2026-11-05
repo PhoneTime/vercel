@@ -54,6 +54,105 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "phone-overheating-in-summer-what-to-do",
+    title: "Phone overheating in summer? What to do, and what not to do",
+    description: "Why phones overheat on hot Melbourne days, how to cool one down safely, how heat wears out the battery, and when it needs a repair.",
+    date: "2026-11-06",
+    read: "5 min read",
+    Body: () => (
+      <>
+        <p>
+          Every summer I get calls from people whose phone has suddenly gone dark, stopped charging or shown a temperature warning. Most of the time the phone is fine once it cools down, but heat does real, lasting damage to batteries. Here is what is going on and what to do about it.
+        </p>
+
+        <h2>Why phones overheat</h2>
+        <p>
+          Apple says iPhones are designed to work best in ambient temperatures between 0°C and 35°C. On a Melbourne summer day that limit is easy to pass, and a phone left on a car dashboard or in direct sun gets much hotter than the air around it.
+        </p>
+        <p>The most common causes I see:</p>
+        <ul>
+          <li>Leaving the phone in a parked car, even for a short time.</li>
+          <li>Using maps and charging at once on a windscreen mount in the sun.</li>
+          <li>Gaming, filming video or a long video call outdoors.</li>
+          <li>Charging under a pillow or blanket, or inside a thick case.</li>
+          <li>An old or swollen battery that heats up more than it should.</li>
+        </ul>
+
+        <h2>What your phone does when it gets too hot</h2>
+        <p>Phones protect themselves. According to Apple, an iPhone that gets too hot may:</p>
+        <ul>
+          <li>slow down or stop charging,</li>
+          <li>dim the screen or turn it black,</li>
+          <li>weaken the mobile signal while the radios go into a low-power state,</li>
+          <li>turn off the camera flash for a while, and</li>
+          <li>slow down apps that need a lot of power.</li>
+        </ul>
+        <p>
+          If it gets hotter still, the screen shows a warning that the iPhone needs to cool down before you can use it. Samsung and other Android phones have similar protections, and may show a warning and limit charging or performance until they cool.
+        </p>
+        <p>These are safety features, not faults. They switch off on their own once the phone is back at a normal temperature.</p>
+
+        <h2>How to cool a hot phone safely</h2>
+        <ul>
+          <li>Move it out of the sun and somewhere cooler, like the shade or indoors.</li>
+          <li>Unplug the charger and take it off any wireless charger.</li>
+          <li>Take it out of the case so heat can escape.</li>
+          <li>Close the app that was working hard, or turn the phone off.</li>
+          <li>Give it time. Fifteen to thirty minutes in a cool room is usually enough.</li>
+        </ul>
+
+        <h2>What not to do</h2>
+        <ul>
+          <li><b>Don&apos;t put it in the fridge or freezer.</b> Sudden cold can cause condensation inside the phone, which is how water damage starts.</li>
+          <li><b>Don&apos;t hold it under the tap or wrap it in ice.</b> Water resistance weakens as phones age and after drops, so even a “waterproof” phone can let moisture in.</li>
+          <li><b>Don&apos;t aim an air conditioner vent or hair dryer at it.</b> Let it cool gradually instead.</li>
+          <li><b>Don&apos;t keep using it while it&apos;s hot.</b> Wait until it feels normal to the touch.</li>
+        </ul>
+
+        <h2>How heat wears out the battery</h2>
+        <p>
+          This is the part most people don&apos;t realise. Apple describes 16°C to 22°C as the ideal comfort zone for its devices, and warns that exposing it to temperatures above 35°C can permanently damage battery capacity, with charging in that heat making it worse. That damage doesn&apos;t come back when the phone cools down. A phone that bakes in the car every week will lose battery health much faster than one kept in a pocket or bag.
+        </p>
+        <p>
+          Apple also notes that charging in some cases can create extra heat. If your phone gets hot while charging, take the case off first.
+        </p>
+
+        <h2>When it&apos;s more than just the weather</h2>
+        <p>Get the phone checked if any of these happen:</p>
+        <ul>
+          <li>It gets hot sitting on a table doing nothing, in a cool room.</li>
+          <li>It shuts down at 20 or 30 percent, or drains far faster than it used to.</li>
+          <li>The screen is lifting, the back is bulging, or the phone rocks on a flat surface. That can be a swollen battery, so stop charging it and don&apos;t press on it.</li>
+          <li>It only charges when cold, or shows a liquid warning after you tried to cool it with water.</li>
+        </ul>
+        <p>
+          Most of these come down to the battery. A replacement is usually a quick job done at your home or work, for example <Price m="iPhone 13" f="Battery" /> for an iPhone 13, <Price m="iPhone 15" f="Battery" /> for an iPhone 15 or <Price m="Galaxy S23" f="Battery" /> for a Galaxy S23. Every model is on the <Link href="/prices">price page</Link>, and <Link href="/guides/is-it-worth-replacing-iphone-battery">this guide</Link> explains how to tell if your battery is worn out.
+        </p>
+        <p>
+          If moisture got in, water damage treatment is available for most models, and the sooner it&apos;s looked at, the better the chances.
+        </p>
+
+        <h2>Summer checklist</h2>
+        <ul>
+          <li>Never leave your phone in a parked car, including the glovebox.</li>
+          <li>Keep it out of direct sun at the beach, pool or park. A bag in the shade is fine.</li>
+          <li>Point the car air vent at a windscreen mount, or mount the phone low and out of the sun.</li>
+          <li>Charge somewhere cool and open, not under a pillow or in a hot car.</li>
+          <li>Take a thick case off when charging or gaming for long periods.</li>
+          <li>Check <b>Settings → Battery → Battery Health</b> before summer. Below 80%, a new battery will cope with hot days much better.</li>
+        </ul>
+
+        <h2>Good to know</h2>
+        <p>
+          On newer iPhones, Settings may show an “unknown part” notice after a battery, screen or camera replacement. This is normal for replacement parts and does not affect function or how your phone works. <Link href="/guides/iphone-unknown-part-message-explained">Here&apos;s why it appears</Link>.
+        </p>
+        <p>
+          Phone getting hot or the battery not lasting? I come to you, most repairs are done the same day, there&apos;s no travel fee and every repair has a {SITE.warranty}-day warranty. <Link href="/book">Book a repair</Link> or <Link href="/book?mode=quote">ask for a quote</Link>.
+        </p>
+      </>
+    ),
+  },
+  {
     slug: "iphone-unknown-part-message-explained",
     title: "Why your iPhone says “Unknown Part” after a repair",
     description: "What the Unknown Part message means after a screen, battery or camera replacement, why Apple shows it, whether it affects your phone, and your options.",
