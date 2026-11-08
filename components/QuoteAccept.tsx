@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { Check, MessageCircle, Phone, CalendarDays } from "lucide-react"
 import { money, SITE, telHref, waHref } from "@/lib/site"
 
@@ -73,6 +73,17 @@ export default function QuoteAccept() {
     return out
   }, [q])
 
+  /* Link from the "Accept" button on the quote PDF (?go=1): the day and time are already set,
+     so go straight to the ready-made text. */
+  const sendRef = useRef<() => void>(() => {})
+  const went = useRef(false)
+  const preset = !!q && !!day && !!win && addr.trim().length > 4
+  useEffect(() => {
+    if (went.current || sp.get("go") !== "1" || !preset) return
+    went.current = true
+    sendRef.current()
+  }, [preset, sp])
+
   if (!q) {
     return (
       <div className="rounded-[28px] border border-line bg-white p-8 text-center sm:p-12">
@@ -108,6 +119,8 @@ export default function QuoteAccept() {
     if (mode === "accept") w.gtag?.("event", "quote_accepted", { value: q.t || undefined, currency: "AUD" })
     window.location.href = smsHref
   }
+
+  sendRef.current = send
 
   if (state === "sent") {
     return (
