@@ -3,12 +3,12 @@
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useMemo, useState } from "react"
-import { Check, Loader2, MessageCircle, Phone, CalendarDays } from "lucide-react"
-import { money, SITE, telHref } from "@/lib/site"
+import { Check, MessageCircle, Phone, CalendarDays } from "lucide-react"
+import { money, SITE, telHref, waHref } from "@/lib/site"
 
 /* A quote link from the Phone Time repair app: /q?d=<base64url JSON>.
-   The answer goes to Formspree with a [PTA:...] code that the app reads from Gmail
-   and puts straight onto the right ticket. */
+   Accepting opens the customer's Messages app with a ready-made text to my mobile –
+   no form service, so nothing counts against the Formspree limit. */
 
 type Q = {
   no: string // ticket number, e.g. R261108-1326
@@ -48,7 +48,6 @@ function decode(s: string | null): Q | null {
     return null
   }
 }
-const encode = (o: object) => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/=+$/, "")
 
 const inputCls = "w-full rounded-2xl border border-line bg-paper px-4 py-3.5 text-base outline-none transition-colors focus:border-teal-500 focus:bg-white"
 
@@ -60,7 +59,7 @@ export default function QuoteAccept() {
   const [win, setWin] = useState(q?.e && q.e >= dayKey(new Date()) && q?.et && isTime(q.et) ? q.et : "")
   const [addr, setAddr] = useState(q?.a || "")
   const [note, setNote] = useState("")
-  const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle")
+  const [state, setState] = useState<"idle" | "sent">("idle")
 
   const days = useMemo(() => {
     const out: string[] = []
@@ -88,50 +87,43 @@ export default function QuoteAccept() {
   const expired = !!q.v && q.v < dayKey(new Date())
   const ok = mode === "ask" ? note.trim().length > 2 : !!day && !!win && addr.trim().length > 4
 
-  const send = async () => {
+  const lineTxt = (q.r || []).filter((x) => x.p > 0 || (x.o || 0) > 0).map((x) => x.n).join(", ")
+  const msg =
+    mode === "ask"
+      ? `Hi, it's ${first || q.n || ""} (quote Q-${q.no}${q.m ? ", " + q.m : ""}). ${note.trim()}`
+      : `Hi, it's ${first || q.n || ""}. I accept quote Q-${q.no} for my ${q.m || "phone"}` +
+        (lineTxt ? `: ${lineTxt}` : "") +
+        (q.t != null ? ` – total ${money(q.t)}` : "") +
+        `.\nBooking: ${day ? longDay(day) : ""}${win ? (isTime(win) ? " at " + tLabel(win) : ", " + win.toLowerCase()) : ""}` +
+        (addr.trim() ? `\nAddress: ${addr.trim()}` : "") +
+        (note.trim() ? `\nNote: ${note.trim()}` : "") +
+        `\nConfirmed ✅`
+  const smsHref = "sms:" + SITE.phone.replace(/\s/g, "") + "?&body=" + encodeURIComponent(msg)
+
+  /* No form service: the customer's own Messages app opens with the text ready to send to me. */
+  const send = () => {
     if (!ok) return
-    setState("sending")
-    const act = mode === "ask" ? "question" : "accept"
-    const tok = encode({ v: 1, no: q.no, act, d: mode === "accept" ? day : "", w: mode === "accept" ? win : "", a: addr.trim(), nt: note.trim() })
-    const msg =
-      (act === "accept" ? "Quote accepted\n" : "Question about a quote\n") +
-      `Quote: Q-${q.no}\nName: ${q.n || ""}\nDevice: ${q.m || ""}` +
-      (q.t != null ? `\nTotal: ${money(q.t)}` : "") +
-      (act === "accept" ? `\nPreferred: ${longDay(day)}, ${winLabel(win)}\nAddress: ${addr.trim()}` : "") +
-      (note.trim() ? `\nNote: ${note.trim()}` : "") +
-      `\n\nCode for the repair app:\n[PTA:${tok}]`
-    try {
-      const r = await fetch(SITE.formspree, {
-        method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: q.n || "Customer",
-          _subject: `${act === "accept" ? "Quote accepted" : "Quote question"}: Q-${q.no} – ${q.n || ""}`,
-          message: msg,
-        }),
-      })
-      if (!r.ok) throw new Error(String(r.status))
-      setState("sent")
-      const w = window as unknown as { gtag?: (...a: unknown[]) => void }
-      if (act === "accept") w.gtag?.("event", "quote_accepted", { value: q.t || undefined, currency: "AUD" })
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    } catch {
-      setState("error")
-    }
+    setState("sent")
+    const w = window as unknown as { gtag?: (...a: unknown[]) => void }
+    if (mode === "accept") w.gtag?.("event", "quote_accepted", { value: q.t || undefined, currency: "AUD" })
+    window.location.href = smsHref
   }
 
   if (state === "sent") {
     return (
       <div className="rounded-[28px] border border-line bg-white p-8 text-center sm:p-12">
         <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-teal-600 text-white">
-          <Check className="h-8 w-8" strokeWidth={3} aria-hidden />
+          <MessageCircle className="h-8 w-8" aria-hidden />
         </div>
-        <h2 className="mt-5 text-3xl font-extrabold tracking-tight">{mode === "accept" ? `Thanks${first ? ", " + first : ""}. Quote accepted.` : "Question sent."}</h2>
+        <h2 className="mt-5 text-3xl font-extrabold tracking-tight">Almost done – just tap Send</h2>
         <p className="mx-auto mt-3 max-w-md text-lg text-muted2">
-          {mode === "accept"
-            ? `I'll text you shortly to confirm ${longDay(day)}${isTime(win) ? " at " + tLabel(win) : " (" + win.toLowerCase() + ")"} for your ${q.m || "repair"}.`
-            : "I'll get back to you by text as soon as I can."}
+          Your Messages app opens with the text ready to send to me ({SITE.phone}). {mode === "accept" ? "Once it arrives I'll text you back to confirm." : "I'll reply as soon as I can."}
         </p>
+        <div className="mx-auto mt-5 max-w-md whitespace-pre-line rounded-2xl bg-paper p-4 text-left text-[15px] text-ink">{msg}</div>
+        <div className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row sm:justify-center">
+          <a href={smsHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-3 font-semibold text-white"><MessageCircle className="h-4 w-4" aria-hidden />Open Messages again</a>
+          <a href={waHref(msg)} target="_blank" rel="noopener" className="inline-flex items-center justify-center rounded-full border border-line px-6 py-3 font-semibold hover:bg-mat">Send by WhatsApp</a>
+        </div>
         {mode === "accept" && q.dp && q.dl ? (
           <div className="mx-auto mt-6 max-w-md rounded-2xl bg-mat p-5 text-left">
             <p className="font-semibold">Deposit: {money(q.dp)}</p>
@@ -139,7 +131,7 @@ export default function QuoteAccept() {
             <a href={q.dl} target="_blank" rel="noopener" className="mt-4 inline-block rounded-full bg-teal-600 px-6 py-3 font-semibold text-white">Pay the deposit</a>
           </div>
         ) : null}
-        <Link href="/" className="mt-8 inline-block rounded-full border border-line px-6 py-3 font-semibold hover:bg-mat">Back to home</Link>
+        <p className="mt-6 text-sm text-muted2">Or call <a href={telHref} className="font-semibold text-ink underline">{SITE.phone}</a> · <button type="button" onClick={() => setState("idle")} className="font-semibold text-ink underline">Change my answer</button></p>
       </div>
     )
   }
@@ -207,12 +199,11 @@ export default function QuoteAccept() {
             </div>
           )}
 
-          {state === "error" ? <p className="mt-5 rounded-2xl bg-red-50 p-4 text-red-700">That didn&apos;t send. Please try again, or call {SITE.phone}.</p> : null}
-          <button type="button" onClick={send} disabled={!ok || state === "sending"} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-4 text-lg font-bold text-white transition-opacity disabled:opacity-40">
-            {state === "sending" ? <Loader2 className="h-5 w-5 animate-spin" aria-hidden /> : mode === "accept" ? <Check className="h-5 w-5" strokeWidth={3} aria-hidden /> : <MessageCircle className="h-5 w-5" aria-hidden />}
-            {mode === "accept" ? "Accept quote" : "Send question"}
+                    <button type="button" onClick={send} disabled={!ok} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-4 text-lg font-bold text-white transition-opacity disabled:opacity-40">
+            {mode === "accept" ? <Check className="h-5 w-5" strokeWidth={3} aria-hidden /> : <MessageCircle className="h-5 w-5" aria-hidden />}
+            {mode === "accept" ? "Accept quote" : "Text my question"}
           </button>
-          {mode === "accept" ? <p className="mt-3 text-center text-sm text-muted2">I&apos;ll text you to confirm the exact time. You only pay once it&apos;s fixed.</p> : null}
+          {mode === "accept" ? <p className="mt-3 text-center text-sm text-muted2">Opens a text to me with your booking details – just tap Send. You only pay once it&apos;s fixed.</p> : null}
         </section>
       </div>
 
