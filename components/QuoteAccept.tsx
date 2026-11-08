@@ -19,6 +19,7 @@ type Q = {
   v?: string // valid until (YYYY-MM-DD)
   a?: string // address
   e?: string // earliest visit (YYYY-MM-DD)
+  et?: string // time I suggested on that day (HH:MM)
   dp?: number // deposit amount
   dl?: string // deposit payment link
 }
@@ -32,6 +33,9 @@ const WINDOWS = [
 
 const dayKey = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 const dayLabel = (k: string) => new Date(k + "T12:00").toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" })
+const tLabel = (t: string) => { const [h, m] = t.split(":").map(Number); return `${h % 12 || 12}:${String(m).padStart(2, "0")} ${h < 12 ? "am" : "pm"}` }
+const isTime = (w: string) => /^\d{1,2}:\d{2}$/.test(w)
+const winLabel = (w: string) => (isTime(w) ? tLabel(w) : w)
 const longDay = (k: string) => new Date(k + "T12:00").toLocaleDateString("en-AU", { weekday: "long", day: "numeric", month: "long" })
 
 function decode(s: string | null): Q | null {
@@ -52,8 +56,8 @@ export default function QuoteAccept() {
   const sp = useSearchParams()
   const q = useMemo(() => decode(sp.get("d")), [sp])
   const [mode, setMode] = useState<"accept" | "ask">("accept")
-  const [day, setDay] = useState("")
-  const [win, setWin] = useState("")
+  const [day, setDay] = useState(q?.e && q.e >= dayKey(new Date()) ? q.e : "")
+  const [win, setWin] = useState(q?.e && q.e >= dayKey(new Date()) && q?.et && isTime(q.et) ? q.et : "")
   const [addr, setAddr] = useState(q?.a || "")
   const [note, setNote] = useState("")
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle")
@@ -93,7 +97,7 @@ export default function QuoteAccept() {
       (act === "accept" ? "Quote accepted\n" : "Question about a quote\n") +
       `Quote: Q-${q.no}\nName: ${q.n || ""}\nDevice: ${q.m || ""}` +
       (q.t != null ? `\nTotal: ${money(q.t)}` : "") +
-      (act === "accept" ? `\nPreferred: ${longDay(day)}, ${win}\nAddress: ${addr.trim()}` : "") +
+      (act === "accept" ? `\nPreferred: ${longDay(day)}, ${winLabel(win)}\nAddress: ${addr.trim()}` : "") +
       (note.trim() ? `\nNote: ${note.trim()}` : "") +
       `\n\nCode for the repair app:\n[PTA:${tok}]`
     try {
@@ -125,7 +129,7 @@ export default function QuoteAccept() {
         <h2 className="mt-5 text-3xl font-extrabold tracking-tight">{mode === "accept" ? `Thanks${first ? ", " + first : ""}. Quote accepted.` : "Question sent."}</h2>
         <p className="mx-auto mt-3 max-w-md text-lg text-muted2">
           {mode === "accept"
-            ? `I'll text you shortly to confirm ${longDay(day)} (${win.toLowerCase()}) for your ${q.m || "repair"}.`
+            ? `I'll text you shortly to confirm ${longDay(day)}${isTime(win) ? " at " + tLabel(win) : " (" + win.toLowerCase() + ")"} for your ${q.m || "repair"}.`
             : "I'll get back to you by text as soon as I can."}
         </p>
         {mode === "accept" && q.dp && q.dl ? (
@@ -161,10 +165,10 @@ export default function QuoteAccept() {
             <div className="mt-6 space-y-6">
               <div>
                 <h2 className="flex items-center gap-2 text-xl font-bold tracking-tight"><CalendarDays className="h-5 w-5 text-teal-600" aria-hidden />Which day suits you?</h2>
-                {q.e ? <p className="mt-1 text-sm text-muted2">Earliest: {longDay(q.e)}</p> : null}
+                {q.e ? <p className="mt-1 text-sm text-muted2">Earliest I can come: {longDay(q.e)}{q.et && isTime(q.et) ? ` at ${tLabel(q.et)}` : ""}</p> : null}
                 <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
                   {days.map((k) => (
-                    <button key={k} type="button" onClick={() => setDay(k)} className={`shrink-0 rounded-2xl border px-4 py-3 text-center text-sm font-semibold transition-colors ${day === k ? "border-teal-600 bg-teal-600 text-white" : "border-line bg-paper hover:border-teal-500"}`}>
+                    <button key={k} type="button" onClick={() => { setDay(k); if (isTime(win) && k !== q.e) setWin("") }} className={`shrink-0 rounded-2xl border px-4 py-3 text-center text-sm font-semibold transition-colors ${day === k ? "border-teal-600 bg-teal-600 text-white" : "border-line bg-paper hover:border-teal-500"}`}>
                       {dayLabel(k)}
                     </button>
                   ))}
@@ -173,6 +177,12 @@ export default function QuoteAccept() {
               <div>
                 <h3 className="text-lg font-bold tracking-tight">What time?</h3>
                 <div className="mt-3 grid grid-cols-2 gap-2">
+                  {q.et && isTime(q.et) && day === q.e ? (
+                    <button type="button" onClick={() => setWin(q.et!)} className={`col-span-2 rounded-2xl border px-4 py-3 text-left transition-colors ${win === q.et ? "border-teal-600 bg-teal-50" : "border-line bg-paper hover:border-teal-500"}`}>
+                      <span className="block font-semibold">{tLabel(q.et)}</span>
+                      <span className="block text-sm text-muted2">The time I suggested</span>
+                    </button>
+                  ) : null}
                   {WINDOWS.map(([w, t]) => (
                     <button key={w} type="button" onClick={() => setWin(w)} className={`rounded-2xl border px-4 py-3 text-left transition-colors ${win === w ? "border-teal-600 bg-teal-50" : "border-line bg-paper hover:border-teal-500"}`}>
                       <span className="block font-semibold">{w}</span>
