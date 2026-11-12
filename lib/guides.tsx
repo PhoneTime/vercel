@@ -109,7 +109,7 @@ export const GUIDES: Guide[] = [
 
         <h2>Already handed the phone over?</h2>
         <p>
-          If you forgot to wipe an iPhone before giving it away, sign in at iCloud.com or use the Find My app on another device to erase it and then remove it from your account. For Android, GoogleFor Android, Google&apos;s Find My Device can eraseapos;s Find Hub (formerly Find My Device) can erase a phone remotely if it&apos;s still online. Then change your important passwords to be safe.
+          If you forgot to wipe an iPhone before giving it away, sign in at iCloud.com or use the Find My app on another device to erase it and then remove it from your account. For Android, Google&apos;s Find Hub (formerly Find My Device) can erase a phone remotely if it&apos;s still online. Then change your important passwords to be safe.
         </p>
 
         <h2>Should you fix it before you sell?</h2>
