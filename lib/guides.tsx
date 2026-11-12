@@ -54,6 +54,99 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "how-to-wipe-phone-before-selling-or-trading-in",
+    title: "Upgrading your phone? How to back up and wipe the old one before selling or trading in",
+    description: "Step-by-step: back up, move to your new phone, sign out and erase an old iPhone or Samsung safely before you sell, trade in or hand it down.",
+    date: "2026-11-13",
+    read: "6 min read",
+    Body: () => (
+      <>
+        <p>
+          With Black Friday sales and Christmas coming up, a lot of people around Melbourne are getting a new phone in the next few weeks. The question I get asked most is what to do with the old one. Whether you sell it, trade it in or give it to the kids, it needs to be backed up, moved across and wiped properly first. Here is how to do it without losing anything, and without locking the next owner out.
+        </p>
+
+        <h2>Before you start</h2>
+        <ul>
+          <li>Charge the old phone, or keep it plugged in. A full transfer and reset can take a while.</li>
+          <li>Make sure you know your Apple Account or Google and Samsung account passwords. You&apos;ll need them to sign out.</li>
+          <li>Update the old phone to the latest software if you can. Transfers work best when both phones are up to date.</li>
+          <li>If the screen is cracked or the battery barely lasts, read the section below on whether to fix it first.</li>
+        </ul>
+
+        <h2>Step 1: Back up the old phone</h2>
+        <p>Do this even if you plan to transfer directly to the new phone. It&apos;s your safety net if something goes wrong.</p>
+        <ul>
+          <li><b>iPhone:</b> go to <b>Settings → [your name] → iCloud → iCloud Backup</b> and tap <b>Back Up Now</b>, or back up to a computer.</li>
+          <li><b>Samsung:</b> Samsung recommends Smart Switch, found under <b>Settings → Accounts and backup → Smart Switch</b>, or the Smart Switch app on a computer. Samsung notes that hidden files and files in Secure Folder are not transferred unless you change their security settings first.</li>
+        </ul>
+        <p>Also check that photos are actually syncing to iCloud Photos or Google Photos, and that WhatsApp chats have their own backup turned on inside WhatsApp.</p>
+
+        <h2>Step 2: Move everything to the new phone</h2>
+        <p>
+          For iPhone to iPhone, Quick Start is the easiest way: turn the new iPhone on, hold it next to the old one and follow the steps. For Samsung to Samsung, Smart Switch does the same job with a cable or wirelessly. Going between iPhone and Android is possible too, but some things like messages and app data may not come across, so check before you wipe anything.
+        </p>
+        <p>Before moving on, open the new phone and check your photos, contacts, messages and banking apps are all there. Some banking and authenticator apps need to be set up again on the new phone, so do that while the old one still works.</p>
+
+        <h2>Step 3: Sign out and erase the old phone</h2>
+        <h3>iPhone</h3>
+        <ul>
+          <li>If you have an Apple Watch paired with it, unpair the watch first.</li>
+          <li>Go to <b>Settings → General → Transfer or Reset iPhone → Erase All Content and Settings</b>.</li>
+          <li>Enter your passcode and Apple Account password when asked. This signs you out of iCloud and turns off Find My, which removes Activation Lock so the next owner can set it up.</li>
+          <li>Once it&apos;s finished, the phone shows the Hello screen. Leave it there.</li>
+        </ul>
+        <p>If you use an eSIM, it moves to the new iPhone during setup or is removed when you erase. If you&apos;re not sure, check with your carrier before erasing. A physical SIM card should simply be taken out.</p>
+
+        <h3>Samsung Galaxy</h3>
+        <ul>
+          <li>Remove your Google account: <b>Settings → Accounts and backup → Manage accounts</b>, choose the Google account and tap <b>Remove account</b>. Repeat for each account.</li>
+          <li>Then reset: <b>Settings → General management → Reset → Factory data reset → Reset → Delete all</b>, and enter your Samsung account password if asked.</li>
+          <li>Take out the SIM card and any microSD card. Samsung points out that a factory reset does not erase the SD card.</li>
+        </ul>
+        <p>
+          Samsung warns that if you reset while still signed in to a Google account, the phone may ask for that Google account during the next setup. This is Factory Reset Protection, and it&apos;s the most common reason a second-hand Android phone can&apos;t be used by its new owner.
+        </p>
+
+        <h2>Already handed the phone over?</h2>
+        <p>
+          If you forgot to wipe an iPhone before giving it away, sign in at iCloud.com or use the Find My app on another device to erase it and then remove it from your account. For Android, GoogleFor Android, Google&apos;s Find My Device can eraseapos;s Find Hub (formerly Find My Device) can erase a phone remotely if it&apos;s still online. Then change your important passwords to be safe.
+        </p>
+
+        <h2>Should you fix it before you sell?</h2>
+        <p>
+          A cracked screen, shattered back or tired battery usually lowers what buyers and trade-in programs will offer. Whether a repair pays for itself depends on your model and the offer you&apos;re getting, so compare the two. For example, a screen is <Price m="iPhone 13" f="Screen" /> for an iPhone 13 and a battery is <Price m="iPhone 14" f="Battery" /> for an iPhone 14. Every model is on the <Link href="/prices">price page</Link>, or <Link href="/book?mode=quote">ask for a quote</Link> and I&apos;ll give you the price upfront.
+        </p>
+        <p>
+          On newer iPhones, Settings may show an “unknown part” notice after a battery, screen or camera replacement. This is normal for replacement parts and does not affect function or how your phone works. Apple notes it can affect trade-in value, so if you&apos;re trading in with Apple, ask me about the options first. <Link href="/guides/iphone-unknown-part-message-explained">Here&apos;s why the notice appears</Link>.
+        </p>
+        <p>
+          If the old phone is going to a family member instead, a new battery is often all it needs. <Link href="/guides/is-it-worth-replacing-iphone-battery">This guide</Link> explains how to check battery health.
+        </p>
+
+        <h2>Selling privately? Watch for scams</h2>
+        <ul>
+          <li>Never send a verification code to a buyer. Codes sent to your phone are only for you.</li>
+          <li>Be wary of buyers who want to pay with a link, “overpay” or send a courier you didn&apos;t arrange.</li>
+          <li>Meet somewhere public, and only hand over the phone once you&apos;ve actually received the money.</li>
+          <li>Wipe the phone yourself before the sale. Don&apos;t let a buyer “check” it while it&apos;s still signed in.</li>
+        </ul>
+
+        <h2>Quick checklist</h2>
+        <ul>
+          <li>Back up to iCloud, Google or Smart Switch.</li>
+          <li>Transfer to the new phone and check photos, contacts, messages and banking apps.</li>
+          <li>Unpair your Apple Watch, or remove your Google account on Android.</li>
+          <li>Erase All Content and Settings, or Factory data reset.</li>
+          <li>Remove the SIM and any SD card.</li>
+          <li>Fix cracks or a worn battery first if it gets you a better price.</li>
+        </ul>
+        <p>
+          Old phone won&apos;t turn on, or the screen is too broken to back it up? That&apos;s often fixable. I come to your home or work, most repairs are done the same day, there&apos;s no travel fee and every repair has a {SITE.warranty}-day warranty. <Link href="/book">Book a repair</Link> or call {SITE.phone}.
+        </p>
+      </>
+    ),
+  },
+  {
     slug: "phone-overheating-in-summer-what-to-do",
     title: "Phone overheating in summer? What to do, and what not to do",
     description: "Why phones overheat on hot Melbourne days, how to cool one down safely, how heat wears out the battery, and when it needs a repair.",
