@@ -57,7 +57,7 @@ export const GUIDES: Guide[] = [
     slug: "how-to-wipe-phone-before-selling-or-trading-in",
     title: "Upgrading your phone? How to back up and wipe the old one before selling or trading in",
     description: "Step-by-step: back up, move to your new phone, sign out and erase an old iPhone or Samsung safely before you sell, trade in or hand it down.",
-    date: "2026-11-12",
+    date: "2026-11-13",
     read: "6 min read",
     Body: () => (
       <>
