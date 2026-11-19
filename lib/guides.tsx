@@ -54,6 +54,105 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "scam-texts-black-friday-christmas-how-to-spot",
+    title: "Delivery and shopping scam texts: how to spot them on your phone before Black Friday and Christmas",
+    description: "How to spot fake parcel, payment and shopping texts in Australia, what the new “Unverified” sender label means, and what to do if you clicked a link.",
+    date: "2026-11-20",
+    read: "6 min read",
+    Body: () => (
+      <>
+        <p>
+          Between Black Friday and Christmas, most of us are waiting on parcels, watching for deals and getting more texts than usual. Scammers know this. Fake “your parcel couldn&apos;t be delivered” and “payment failed” messages are some of the most common things customers show me on their phones at this time of year. Here is how to tell a real message from a scam, what the new “Unverified” label means, and what to do if you&apos;ve already tapped a link.
+        </p>
+
+        <h2>What scam texts look like</h2>
+        <p>
+          Scamwatch says scam texts often pretend to be from a government agency, a business you deal with, or even a friend or family member. They sound urgent and usually include a link to a fake website built to steal your details. The common ones around the sales season:
+        </p>
+        <ul>
+          <li>A parcel is “on hold”, needs a small redelivery fee or needs you to confirm your address.</li>
+          <li>A payment “failed” for a subscription, toll or online order.</li>
+          <li>Your account has been “hacked” or “locked” and you need to log in to fix it.</li>
+          <li>A fine or service cut-off unless you pay today.</li>
+          <li>“Hi Mum, I&apos;ve got a new number”, followed by a request for money.</li>
+        </ul>
+
+        <h2>The warning signs</h2>
+        <p>According to Scamwatch, be suspicious of any message that asks you to:</p>
+        <ul>
+          <li>act immediately,</li>
+          <li>make a payment or transfer money,</li>
+          <li>click a link or call a number given in the message, or</li>
+          <li>log in with your username and password.</li>
+        </ul>
+        <p>
+          A real delivery company or bank can still contact you by text, but you never need to use the link in the message. Open the official app, or type the website address yourself, and check there.
+        </p>
+
+        <h2>The new “Unverified” label</h2>
+        <p>
+          This is new this year. Scamwatch explains that from 1 July 2026, texts from businesses and organisations in Australia should show a registered, branded sender name, such as “MyGov”, instead of a number. Messages that use a sender name that isn&apos;t registered show as <b>“Unverified”</b> and are grouped together in one thread.
+        </p>
+        <p>
+          Scamwatch says to treat “Unverified” messages with caution. A branded name is a good sign, but it&apos;s not a free pass. Scammers can still text from ordinary mobile numbers, and they can still copy the wording of a real company. The safest habit stays the same: don&apos;t tap the link, go to the app or website yourself.
+        </p>
+
+        <h2>Shopping scams are the big one</h2>
+        <p>
+          The ACCC reported that shopping scams were the most reported type of scam involving a financial loss in the first nine months of 2025, and it warned shoppers to watch for scams disguised as genuine Black Friday deals. Fake online shops, ads and hacked Facebook or Instagram accounts selling “fire sale” items or tickets are common. If a friend&apos;s account is suddenly selling something, call or text them to check before you pay.
+        </p>
+        <p>
+          Prices that look too good, pressure to pay quickly and requests to pay by bank transfer, gift cards or crypto are all red flags. If you&apos;re selling an old phone after upgrading, never send a buyer a verification code. <Link href="/guides/how-to-wipe-phone-before-selling-or-trading-in">This guide</Link> covers selling safely and wiping the phone first.
+        </p>
+
+        <h2>When your phone suddenly says “SOS only”</h2>
+        <p>
+          This one matters to me because people often think it&apos;s a hardware fault. Scamwatch and the ACMA have warned about criminals taking over people&apos;s mobile numbers, then using the verification codes to reset passwords for banking, myGov and other accounts. Warning signs include:
+        </p>
+        <ul>
+          <li>texts about changes to your mobile account that you didn&apos;t make,</li>
+          <li>verification codes you didn&apos;t ask for,</li>
+          <li>password reset emails or login alerts you didn&apos;t start, and</li>
+          <li>your phone suddenly losing signal or showing “SOS only” in an area where it normally works.</li>
+        </ul>
+        <p>
+          If those happen together, contact your bank first, then your phone provider, straight away. Don&apos;t wait to book a repair. If it&apos;s just no signal with none of the other signs, restart the phone and check with your carrier for an outage before assuming the phone is broken.
+        </p>
+
+        <h2>Clicked a link or paid? Do this now</h2>
+        <p>Scamwatch recommends these steps:</p>
+        <ul>
+          <li><b>Call your bank or card provider immediately.</b> Ask them to stop any transactions.</li>
+          <li><b>Change your passwords</b> for banking, email, government and shopping accounts, starting with your email.</li>
+          <li><b>Contact IDCARE</b> on 1800 595 160 (free) if you gave out personal details. They help you make a plan.</li>
+          <li><b>Report it to Scamwatch</b> at scamwatch.gov.au, and report it to the company or platform the scammer pretended to be.</li>
+        </ul>
+        <p>
+          If you only opened the link and didn&apos;t enter anything, close the page, don&apos;t enter details, and keep your phone&apos;s software up to date. On an iPhone or Samsung, you can also block the sender and report the message as junk or spam from the Messages app.
+        </p>
+
+        <h2>Quick checklist for the sales season</h2>
+        <ul>
+          <li>Track parcels in the courier&apos;s or shop&apos;s own app, not through text links.</li>
+          <li>Treat “Unverified” texts with caution, and don&apos;t trust a branded name on its own.</li>
+          <li>Never share a verification code with anyone, including someone claiming to be your bank or telco.</li>
+          <li>Check a “new number” from family by calling their old number.</li>
+          <li>Pay with a card or a trusted payment method, not bank transfer or gift cards, when buying from someone new.</li>
+          <li>Turn on two-factor authentication for your email, and keep your phone updated.</li>
+          <li>If your phone drops to “SOS only” along with odd codes or alerts, call your bank and carrier first.</li>
+        </ul>
+
+        <h2>Good to know</h2>
+        <p>
+          A genuine repair business won&apos;t text you a link asking for card details before a repair. With me, you get the price upfront and pay when the job is done, by cash, card or transfer. You can see every price on the <Link href="/prices">price page</Link>.
+        </p>
+        <p>
+          Phone actually broken, or not charging after all those deliveries? I come to your home or work in Kilsyth and Melbourne&apos;s eastern suburbs, most repairs are done the same day, there&apos;s no travel fee and every repair has a {SITE.warranty}-day warranty. <Link href="/book">Book a repair</Link>, <Link href="/book?mode=quote">ask for a quote</Link> or call {SITE.phone}.
+        </p>
+      </>
+    ),
+  },
+  {
     slug: "how-to-wipe-phone-before-selling-or-trading-in",
     title: "Upgrading your phone? How to back up and wipe the old one before selling or trading in",
     description: "Step-by-step: back up, move to your new phone, sign out and erase an old iPhone or Samsung safely before you sell, trade in or hand it down.",
