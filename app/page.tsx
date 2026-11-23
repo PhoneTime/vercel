@@ -132,6 +132,20 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Business and schools */}
+      <section className="pb-20 sm:pb-28">
+        <Container>
+          <div className="flex flex-col gap-6 rounded-[32px] bg-ink p-8 text-white sm:p-12 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-[14px] font-semibold uppercase tracking-[0.14em] text-aqua">Business &amp; schools</p>
+              <h2 className="mt-3 text-[28px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[36px]">Repairs for your team, on site.</h2>
+              <p className="mt-3 text-lg text-white/70">Staff phones, work iPads and school devices fixed at your office or campus. Volume discounts, repair first and pay later on invoice.</p>
+            </div>
+            <Link href="/business" className="shrink-0 rounded-full bg-aqua px-7 py-4 text-center text-lg font-bold text-ink hover:bg-white">Business repairs</Link>
+          </div>
+        </Container>
+      </section>
+
       {/* Why choose: plain facts, two columns */}
       <section className="border-t border-line bg-white py-20 sm:py-24">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">

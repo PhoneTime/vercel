@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     u("/", 1),
     u("/prices", 0.9),
     u("/book", 0.9),
+    u("/business", 0.8),
     u("/contact", 0.6),
     u("/areas", 0.6),
     u("/guides", 0.7),
