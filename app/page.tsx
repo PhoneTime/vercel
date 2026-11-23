@@ -139,7 +139,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <p className="text-[14px] font-semibold uppercase tracking-[0.14em] text-aqua">Business &amp; schools</p>
               <h2 className="mt-3 text-[28px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[36px]">Repairs for your team, on site.</h2>
-              <p className="mt-3 text-lg text-white/70">Staff phones, work iPads and school devices fixed at your office or campus. Several devices in one visit, one invoice.</p>
+              <p className="mt-3 text-lg text-white/70">Staff phones, work iPads and school devices fixed at your office or campus. Volume discounts, repair first and pay later on invoice.</p>
             </div>
             <Link href="/business" className="shrink-0 rounded-full bg-aqua px-7 py-4 text-center text-lg font-bold text-ink hover:bg-white">Business repairs</Link>
           </div>

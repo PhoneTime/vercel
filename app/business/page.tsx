@@ -6,7 +6,7 @@ import { SITE, telHref, abnFmt } from "@/lib/site"
 
 export const metadata = {
   title: "On-site Phone & iPad Repair for Businesses and Schools",
-  description: `Phone and iPad repairs at your office, site or school across ${SITE.area}. Several devices in one visit, one invoice, no travel fee. Call ${SITE.phone}.`,
+  description: `Phone and iPad repairs at your office, site or school across ${SITE.area}. Volume discounts, repair first and pay on invoice, no travel fee. Call ${SITE.phone}.`,
   alternates: { canonical: "/business" },
 }
 
@@ -18,15 +18,17 @@ const WHO = [
 
 const STEPS = [
   { t: "Send me the list", d: "Tell me the models and what's wrong with each one. A rough list is fine." },
-  { t: "Get a written quote", d: "You get a price per device before anything is booked." },
+  { t: "Get a written quote", d: "You get a price per device before anything is booked, with a volume discount when there are several." },
   { t: "Pick a time", d: "Before you open, at lunch, after hours or in the school holidays. I'm open 24 hours, 7 days." },
-  { t: "Repairs on site, one invoice", d: "Devices are fixed at your place and tested before I leave. You get one invoice for the lot." },
+  { t: "Repairs first, pay on invoice", d: "Devices are fixed at your place and tested before I leave. Nothing to pay on the day: you get one invoice for the lot, with payment terms." },
 ]
 
 const FAQ_B = [
   { q: "Can you fix several devices in one visit?", a: "Yes. Send me the list first so I bring the right parts, and I'll work through them on site." },
   { q: "Do the devices leave our premises?", a: "No. Repairs are done at your office, site or school, so phones and iPads stay with you the whole time." },
-  { q: "Can I get an invoice for our accounts?", a: `Yes. Every job comes with an invoice showing my ABN (${abnFmt}). Phone Time isn't registered for GST, so no GST is charged.` },
+  { q: "Do you offer discounts for several devices?", a: "Yes. The more devices in one job, the better the price. Send me the list and the quote will show the discount." },
+  { q: "Do we have to pay on the day?", a: "No. I repair first and you pay afterwards. Businesses and schools can pay on invoice with payment terms." },
+  { q: "Can I get an invoice for our accounts?", a: `Yes. Every job comes with an invoice showing my ABN (${abnFmt}), and it can be sent to your accounts team. Phone Time isn't registered for GST, so no GST is charged.` },
   { q: "Is there a call-out or travel fee?", a: "No. You pay for the repairs only." },
   { q: "What warranty do repairs have?", a: `Every repair has a ${SITE.warranty}-day warranty on the part and the labour.` },
   { q: "Which devices do you repair?", a: "iPhone, Samsung Galaxy, Google Pixel and iPad: screens, batteries, charging ports, back glass and cameras." },
@@ -45,10 +47,10 @@ export default function BusinessPage() {
             Phone and iPad repairs at your office or school.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            I come to your workplace, site or campus across {SITE.area}, fix the devices there and send one invoice. No downtime waiting on a repair shop.
+            I come to your workplace, site or campus across {SITE.area}, fix the devices there and send one invoice with payment terms. Volume discounts for several devices, and no downtime waiting on a repair shop.
           </p>
-          <ul className="mt-7 grid max-w-xl grid-cols-1 gap-x-6 gap-y-2.5 text-[15px] text-white/90 min-[400px]:grid-cols-2">
-            {["Several devices in one visit", "No travel fee", "One invoice with ABN", `${SITE.warranty}-day warranty`].map((t) => (
+          <ul className="mt-7 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-2.5 text-[15px] text-white/90 min-[400px]:grid-cols-2 lg:grid-cols-3">
+            {["Volume discounts", "Repair first, pay later", "Invoice with payment terms", "No travel fee", "Several devices in one visit", `${SITE.warranty}-day warranty`].map((t) => (
               <li key={t} className="flex items-center gap-2">
                 <Check className="h-4 w-4 shrink-0 text-aqua" aria-hidden strokeWidth={3} />
                 {t}
